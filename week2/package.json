@@ -11,5 +11,8 @@
         "url": "https://github.com/adela914/WTM.JSCC2019.Homeworks.git "
     },
     "author": "Kyunghwa Oh",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "nodemon": "^1.19.4"
+    }
 }
