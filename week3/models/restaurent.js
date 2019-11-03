@@ -10,8 +10,8 @@ module.exports = class Restaurent {
 
     }
 
-    static create({ name, location, whoLikedIt, whoDislikeIt, comments, ratings }) {
-        return new Restaurent(name, location, whoLikedIt, whoDislikeIt, comments, ratings, id)
+    static create({ name, location, whoLikedIt = [], whoDislikedIt = [], comments = [], ratings = [], id }) {
+        return new Restaurent(name, location, whoLikedIt = [], whoDislikedIt = [], comments = [], ratings = [], id)
 
     }
 

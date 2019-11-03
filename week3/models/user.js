@@ -10,6 +10,9 @@ module.exports = class User {
 
     }
 
+    // this.likedrestaurents = likedrestaurents ? likedrestaurents : [] 안정성있는 장치를 만드는 것 이렇게 넣으면
+    // create 함수 넣을 때 모두 parameter 안 넣어도됨
+
     like(restaurent) {
 
         if (this.likedrestaurents.indexOf(restaurent) === -1) {
@@ -51,9 +54,9 @@ module.exports = class User {
 
     }
 
-    static create({ name, location, likedrestaurents, dislikedrestaurents, taggedcomments, wishList, id }) {
+    static create({ name, location, likedrestaurents = [], dislikedrestaurents = [], taggedcomments = [], wishList = [], id }) {
 
-        return new User(name, location, likedrestaurents, dislikedrestaurents, taggedcomments, wishList, id);
+        return new User(name, location, likedrestaurents = [], dislikedrestaurents = [], taggedcomments = [], wishList = [], id);
     }
 
 
