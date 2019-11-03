@@ -1,11 +1,12 @@
 module.exports = class User {
-    constructor(name, location) {
+    constructor(name, location, likedrestaurents = [], dislikedrestaurents = [], taggedcomments = [], wishList = [], id) {
         this.name = name
         this.location = location
-        this.likedrestaurents = []
-        this.dislikedrestaurents = []
-        this.taggedcomments = []
-        this.wishList = []
+        this.likedrestaurents = likedrestaurents
+        this.dislikedrestaurents = dislikedrestaurents
+        this.taggedcomments = taggedcomments
+        this.wishList = wishList
+        this.id = id
 
     }
 
@@ -48,6 +49,11 @@ module.exports = class User {
     addWishlist(restaurent) {
         this.wishList.push(restaurent.name);
 
+    }
+
+    static create({ name, location, likedrestaurents, dislikedrestaurents, taggedcomments, wishList, id }) {
+
+        return new User(name, location, likedrestaurents, dislikedrestaurents, taggedcomments, wishList, id);
     }
 
 

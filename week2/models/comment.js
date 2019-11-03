@@ -1,8 +1,9 @@
 module.exports = class Comment {
-    constructor(user, restaurent, comment) {
+    constructor(user, restaurent, comment, id) {
         this.user = user
         this.restaurent = restaurent
         this.comment = comment
+        this.id = id
         restaurent.comments.push(this.comment)
         console.log("Your comment is posted!")
     }
@@ -12,6 +13,9 @@ module.exports = class Comment {
         console.log("You tagged " + user.name + "!")
     }
 
+    static create({ user, restaurent, comment, id }) {
+        return new Comment(user, restaurent, comment, id)
+    }
+
 
 }
-printName = person => console.log(person.name)

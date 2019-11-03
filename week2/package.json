@@ -13,6 +13,7 @@
     "author": "Kyunghwa Oh",
     "license": "MIT",
     "dependencies": {
+        "flatted": "^2.0.1",
         "nodemon": "^1.19.4"
     }
 }

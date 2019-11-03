@@ -1,56 +1,47 @@
-const User = require("./user");
-const Restaurent = require("./restaurent")
-const Comment = require("./comment")
-const Database = require("./database")
+const User = require("./models/user");
+const Restaurent = require("./models/restaurent")
+const Comment = require("./models/comment")
+const UserService = require('./services/user-service')
+const CommentService = require('./services/comment-service')
+const RestaurentService = require('./services/restaurent-service')
+
+
+console.log('Hello World!')
 
 
 
+async function main() {
+    const mert = new User('Mert', 34)
+    const byeol = new User("Byeol", 24)
+    const kai = new User('Kai', 28)
+    const koen = new User('Koen', 33)
 
-// creating some users, restaurents and comments.
-
-
-kai = new User("Kai", "Prenzlauer Berg")
-yuna = new User("yuna", "Mitte")
-koen = new User("Koen", "Prenzlauer Berg")
-
-const users = [kai, yuna, koen]
-
-
-
-arirang = new Restaurent("Arirang Bulgogi")
-abonim = new Restaurent("Abonim")
-kokio = new Restaurent("Kokio")
-
-const restaurents = [arirang, abonim, kokio]
+    const arirang = new Restaurent("arirang", "mitte")
+    const chanchan = new Restaurent("chanchan", "p-berg")
+    const buchkaffe = new Restaurent("buchkaffe", "p-berg")
 
 
+    kai.like(arirang)
+    koen.dislike(chanchan)
 
-const firstComment = new Comment(kai, arirang, "Very authentic korean restaurent! Recommend it to everyone!")
-const secondComment = new Comment(yuna, abonim, "Korean & Japanese restaurent. pretty good fish quality for the Berlin standard")
-const thirdComment = new Comment(kai, kokio, "They have Korean fried chickens in Berlin")
+    await UserService.add(kai)
+    await UserService.add(koen)
+    await UserService.add(byeol)
+    await UserService.add(mert)
+
+    const people = await UserService.findAll()
+
+    console.log(people)
+
+    await RestaurentService.add(arirang)
+    await RestaurentService.add(chanchan)
+    await RestaurentService.add(buchkaffe)
+
+    const restaurents = await RestaurentService.findAll()
+
+    console.log(restaurents)
 
 
-const comments = [firstComment, secondComment, thirdComment]
+}
 
-///interactions///
-
-kai.like(arirang)
-yuna.dislike(kokio)
-yuna.rate(kokio, 2)
-
-kokio.checkRatings()
-
-///save datas in to database///
-
-// Database.save("users.json", users)
-// Database.save("restaurents.json", restaurents)
-// Database.save("comments.json", comments)
-
-// ///load datas from database///
-
-const loadedUsers = Database.load("users.json")
-const loadedRestaurents = Database.load("restaurents.json")
-const loadedComments = Database.load("comments.json")
-console.log(loadedUsers)
-console.log(loadedRestaurents)
-console.log(loadedComments)
+main()
