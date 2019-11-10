@@ -19,10 +19,10 @@ async function main() {
     const arirang = new Restaurent("arirang", "mitte")
     const chanchan = new Restaurent("chanchan", "p-berg")
     const buchkaffe = new Restaurent("buchkaffe", "p-berg")
-
+    const comment1 = new Comment(kai, arirang, "good!!!!")
 
     kai.like(arirang)
-    koen.dislike(chanchan)
+    koen.dislike(arirang)
 
     await UserService.add(kai)
     await UserService.add(koen)
@@ -36,10 +36,14 @@ async function main() {
     await RestaurentService.add(arirang)
     await RestaurentService.add(chanchan)
     await RestaurentService.add(buchkaffe)
+    await CommentService.add(comment1)
 
     const restaurents = await RestaurentService.findAll()
 
-    console.log(restaurents)
+    console.log(restaurents);
+    console.log(arirang);
+    console.log(comment1);
+
 
 
 }

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1 We have so far #{people.length} users.
+    each user in people 
+        h4 #{user.name}
+
