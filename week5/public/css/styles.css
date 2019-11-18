@@ -64,7 +64,6 @@ a:hover {
 }
 
 button {
-    margin-left: 60px;
     background-color: rgb(253, 210, 74);
     width: 163px;
     height: 43px;
@@ -80,18 +79,38 @@ button:hover {
     cursor: pointer;
 }
 
-#footer {
-    background: rgb(253, 210, 74);
-    color: #3a1f5d;
-    text-align: center;
-    height: 100px;
-}
-
 .food {
     height: 350px;
     width: 350px;
 }
 
-form {
-    float: left;
+.new {
+    text-align: center;
+}
+
+.add_new {
+    color: #cf455c;
+    font-size: 2em;
+}
+
+.newRestaurent {
+    display: block;
+    text-align: center;
+}
+
+.newform {
+    width: 400px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#mogofooter {
+    background: rgb(253, 210, 74);
+    color: #3a1f5d;
+    text-align: center;
+    height: 100px;
 }

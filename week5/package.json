@@ -18,6 +18,7 @@
   "homepage": "https://github.com/adela914/WTM2019.JSCCProject#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bulma": "^0.8.0",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.7.11",

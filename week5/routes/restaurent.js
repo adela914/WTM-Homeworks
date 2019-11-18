@@ -1,9 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const bodyParser = require('body-parser')
 
 const UserService = require('../services/user-service')
 const RestaurentService = require('../services/restaurent-service')
 const CommentService = require('../services/comment-service')
+
 
 
 
@@ -15,8 +17,9 @@ router.get('/restaurents', async(req, res) => {
 
 router.post('/restaurents', async(req, res) => {
     const restaurent = await RestaurentService.add(req.body)
-    res.render(restaurent)
+
 })
+
 
 router.get('/:id', async(req, res) => {
     const restaurent = await RestaurentService.find(req.params.id)
@@ -24,10 +27,19 @@ router.get('/:id', async(req, res) => {
 })
 
 router.delete('/:id', async(req, res) => {
-    const restaurent = await ResataurentService.del(req.params.id)
-    res.send(restaurent)
+    const restaurent = await RestaurentService.del(req.params.id)
+
 })
 
+router.get('/restaurents/new', function(req, res) {
+    res.render('new');
+})
 
+router.post('/restaurents/new', function(req, res) {
+    const name = req.body.name
+    console.log(name);
+
+
+});
 
 module.exports = router

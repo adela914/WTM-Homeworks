@@ -4,8 +4,6 @@
 nodemon index.js
 ```
 
-### You are set on
-
 ```
 http://localhost:3000
 ```

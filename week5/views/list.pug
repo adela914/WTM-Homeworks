@@ -2,10 +2,12 @@ extends partials/header
 
 
 block content
-    h1 The number of the items is #{items.length}
-    each item in items
-        p #{item.name}
-    pre #{JSON.stringify(items, null, 4)}
+    div.add
+        a(href='/restaurents/new') 
+            button(type="submit") add a new Restaurent
+         
+   
+
 
     include partials/footer
 

@@ -4,19 +4,23 @@ html( lang="en" )
         block title
             title= pageName
         meta( charset='utf-8' )
-        link( rel="stylesheet" href="/css/styles.css" type="text/css" )
         link( href="https://fonts.googleapis.com/css?family=Archivo&display=swap" rel="stylesheet" )
         link( href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" )
         script(src="https://unpkg.com/axios/dist/axios.min.js")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css")
+        script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
+        link( rel="stylesheet" href="/css/styles.css" type="text/css" )
+
+
 
     body
         section#title
             div.container
                 a.logo(href="/") MOGO!
                 .navitems
-                    a(href="#") Restaurents
+                    a(href="/restaurents") Restaurents
                     a(href="#") Contact
                     a(href="#") About
-                    a(href="#") Login
+                    a(href="/login") Login
 
         block content
