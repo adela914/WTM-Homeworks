@@ -1,0 +1,27 @@
+{
+  "name": "wtmproject",
+  "version": "1.0.0",
+  "description": "a personal project for WTM Berlin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adela914/WTM2019.JSCCProject.git"
+  },
+  "author": "Kyunghwa Oh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adela914/WTM2019.JSCCProject/issues"
+  },
+  "homepage": "https://github.com/adela914/WTM2019.JSCCProject#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.7.11",
+    "passport-local-mongoose": "^5.0.1",
+    "pug": "^2.0.4"
+  }
+}

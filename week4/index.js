@@ -46,7 +46,7 @@ app.get('/users', async function(req, res) {
 
 
 
-app.post('/', async function(req, res) {
+app.post('/restaurents', async function(req, res) {
     const restaurent = await RestaurentService.add(req.body);
     res.send(restaurent);
 
