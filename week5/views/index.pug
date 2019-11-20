@@ -1,17 +1,19 @@
 extends partials/header
 
 
+
 block content
 
-    section#discover
-        .container2
+    section#content
+        .container
             img.food(src="images/sashimi.png", alt="sashimi")            
-            div
+            .container2
                 p.introduction In Berlin there are a plenty of Korean restaurents! But how do you know if it's authentic Korean restaurent or not? No worries 🙅 Here you can find a lot of Korean restaurents with its informations and other foodie's reviews! Please do check our list out and have a good Korean Mogo! 🍱 You need to register or login to see all the secret places 👇
-                a(href='/register')
-                    button(type="submit") Register
-                a(href="/login")
-                    button(type="submit") Login
+                .container3
+                    a(href='/register')
+                        button.btn.btn-lg(type="submit") Register   
+                    a(href="/login")
+                        button.btn.btn-lg(type="submit") Login  
 
     include partials/footer
 

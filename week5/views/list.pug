@@ -2,11 +2,27 @@ extends partials/header
 
 
 block content
-    div.add
+    div.addbtn
         a(href='/restaurents/new') 
-            button(type="submit") add a new Restaurent
-         
-   
+            button.btn.btn-lg(type="submit") Add a new Restaurent
+    .restaurents.container
+      .row.mb-5       
+        each restaurent in restaurents
+          .col-md-4.mt-5  
+            .card.h-100(style="width: 18rem;")
+              img.card-img-top(src=restaurent.image)
+              .card-body
+                  h5.card-title #{restaurent.name}
+                  h6.card-subtitle.mb-2.text-muted @#{restaurent.location}
+                  p.card-text #{restaurent.description}
+                  a.btn.btn-warning(href="/restaurents/" + restaurent._id) Checkout
+                  
+            
+            
+                  
+
+
+        
 
 
     include partials/footer

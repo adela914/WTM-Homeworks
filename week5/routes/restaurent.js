@@ -11,33 +11,26 @@ const CommentService = require('../services/comment-service')
 
 router.get('/restaurents', async(req, res) => {
     const restaurents = await RestaurentService.findAll()
-    res.render('list', { items: restaurents })
+    res.render('list', { restaurents })
 
 })
 
-router.post('/restaurents', async(req, res) => {
-    const restaurent = await RestaurentService.add(req.body)
-
-})
-
-
-router.get('/:id', async(req, res) => {
-    const restaurent = await RestaurentService.find(req.params.id)
-    res.render('data', { data: restaurent })
-})
-
-router.delete('/:id', async(req, res) => {
-    const restaurent = await RestaurentService.del(req.params.id)
-
-})
 
 router.get('/restaurents/new', function(req, res) {
     res.render('new');
 })
 
-router.post('/restaurents/new', function(req, res) {
+router.post('/restaurents/new', async function(req, res) {
     const name = req.body.name
-    console.log(name);
+    const location = req.body.location
+    const image = req.body.image
+    const description = req.body.description
+    const newRestaurent = { name, location, image, description }
+
+    await RestaurentService.add(newRestaurent)
+
+    res.redirect('/restaurents')
+    console.log('a new restaurent is sucessfully added!');
 
 
 });

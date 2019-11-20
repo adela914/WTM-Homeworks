@@ -1,33 +1,33 @@
 extends partials/header
 
 
+
 block content
     container.new
         h1.add_new Add a New Restaurent!
             div.newRestaurent
                 form.newform(action="/restaurents/new", method="post")
                     .field
-                        p.control.has-icons-left.has-icons-right
-                            input.input.is-warning(name='name', type='text', placeholder='Name')
-                            span.icon.is-small.is-left
-                                i.fas.fa-utensils
+                      input.form-control(name='name', type='text', placeholder='Name')
+                      span.icon.is-small.is-left
+                                
                         
                     .field
-                        p.control.has-icons-left
-                            input.input.is-warning(name='location',type='text', placeholder='Location')
-                            span.icon.is-small.is-left
-                                i.fas.fa-fish
+                      i.fas.fa-fish
+                      input.form-control(name='location',type='text', placeholder='Location')
+                      span.icon.is-small.is-left
+                                
                     .field
-                        p.control.has-icons-left
-                            input.input.is-warning(name='image', type='text',placeholder='Image URL')
-                            span.icon.is-small.is-left
-                                i.fas.fa-utensils
+                      i.fas.fa-utensils
+                      input.form-control(name='image', type='text',placeholder='Image URL')
+                      span.icon.is-small.is-left
+                              
+                    .field
+                      i.fas.fa-fish
+                      textarea.form-control(name='description', type='text', placeholder='Description')
                     .field
                         p.control
-                            textarea.textarea.is-warning(name='description', type='text', placeholder='Description')
-                    .field
-                        p.control
-                            button.button.is-warning Login
+                            button.btn.btn-lg Share
 
                 
 

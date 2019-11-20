@@ -4,6 +4,9 @@ body {
     font-family: 'Archivo', sans-serif;
 }
 
+
+/* Navigation bar style */
+
 a {
     text-decoration: none;
     color: #3a1f5d;
@@ -15,18 +18,14 @@ a:visited {
 
 a:hover {
     color: #cf455c;
+    text-decoration: none;
     cursor: pointer;
 }
 
-#title {
-    background-color: white;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
+.logo {
+    font-size: 3em;
+    color: rgb(253, 210, 74) !important;
+    font-family: 'Pacifico', cursive;
 }
 
 .navitems {
@@ -39,23 +38,42 @@ a:hover {
     font-size: 1.3em;
 }
 
-.logo {
-    font-size: 3em;
-    color: rgb(253, 210, 74) !important;
-    font-family: 'Pacifico', cursive;
+
+/* Index page */
+
+#title {
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-#discover {
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#content {
     background-color: white;
     height: 500px;
     padding-left: 10%;
     padding-right: 10%;
 }
 
-.container2 {
+.container {
     display: flex;
     flex-direction: row;
     padding-top: 70px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .introduction {
@@ -63,26 +81,45 @@ a:hover {
     color: #3a1f5d;
 }
 
-button {
-    background-color: rgb(253, 210, 74);
-    width: 163px;
-    height: 43px;
-    border-radius: 10em;
-    color: white;
-    border: none;
-    letter-spacing: 2px;
-    font-size: 1em;
-    font-family: 'Archivo', sans-serif;
-}
+
+/* Buttons Style */
 
 button:hover {
     cursor: pointer;
 }
 
+.btn {
+    background-color: rgb(253, 210, 74) !important;
+    color: white !important;
+    border-radius: 7em;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+}
+
+
+/* Image in first page */
+
 .food {
     height: 350px;
     width: 350px;
 }
+
+
+/* Restaurents List */
+
+.restaurents {
+    padding: 0 100px 0 100px;
+}
+
+.addbtn {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 10%;
+    padding-right: 20%;
+}
+
+
+/* Adding a new restaurent page */
 
 .new {
     text-align: center;
@@ -107,6 +144,9 @@ button:hover {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+
+/* Footer style */
 
 #mogofooter {
     background: rgb(253, 210, 74);
