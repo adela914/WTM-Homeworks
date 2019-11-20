@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
+const seedDB = require("./seeds")
 
 
 const userRouter = require('./routes/user')
@@ -18,6 +19,7 @@ app.use(express.static("public"));
 app.use(userRouter);
 app.use(restaurentRouter);
 app.use(commentRouter);
+seedDB();
 
 
 app.listen(3000, function() {

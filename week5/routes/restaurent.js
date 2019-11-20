@@ -20,6 +20,17 @@ router.get('/restaurents/new', function(req, res) {
     res.render('new');
 })
 
+
+
+
+router.get('/restaurents/:id', async(req, res) => {
+    const restaurent = await RestaurentService.find(req.params.id)
+    res.render('data', { data: restaurent })
+})
+
+
+
+
 router.post('/restaurents/new', async function(req, res) {
     const name = req.body.name
     const location = req.body.location
