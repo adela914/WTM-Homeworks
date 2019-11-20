@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.7.11",
+    "mongoose-autopopulate": "^0.9.1",
     "passport-local-mongoose": "^5.0.1",
     "pug": "^2.0.4"
   }

@@ -37,7 +37,7 @@ async function seedDB() {
             console.log('Restaurent created');
             const comment = await Comment.create({
                 text: 'This place is great, but I wish there was internet',
-                author: 'Homer'
+                author: 'Kai'
             })
             console.log('Comment created');
             restaurent.comments.push(comment);

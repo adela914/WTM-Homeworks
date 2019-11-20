@@ -2,8 +2,32 @@ extends partials/header
 
 
 block content
-    //- This just displays the passed data
-    pre #{JSON.stringify(data, null, 4)}
+    .content
+      .card.mb-3.border-warning(style="max-width: 1000px;")
+        .row.no-gutters
+          .col-md-4.imagecontainer
+            img.dataimg.card-img(src=restaurent.image, alt="image")
+          .col-md-8
+            .card-body
+              h4.card-title   #{restaurent.name}
+              h5.card-text @ #{restaurent.location}
+              p.card-text #{restaurent.description}
+              p.card-text
+                small.text-muted Author
+      each comment in restaurent.comments 
+        .comments
+          h #{comment.text}
+                 
+        .form-group
+          form(action="/restaurents/" + restaurent._id, method="post")
+            labelExample Comment
+            textarea.form-control.border-warning.comment(name='comment[text]', type='text', rows="2")
+            button.btn Submit
+        
+
+  
 
 
+
+        
     include partials/footer

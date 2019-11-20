@@ -1,12 +1,12 @@
 var mongoose = require("mongoose");
 
 var userSchema = new mongoose.Schema({
-    name: String,
+    username: String,
     location: String,
     savedRestaurents: {
         id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Restaurent"
+            ref: "restaurent"
         },
         name: String
     }

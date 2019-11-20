@@ -6,16 +6,25 @@ var restaurentSchema = new mongoose.Schema({
     description: String,
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Comment",
+        ref: "comment",
+        autopopulate: {
+            maxDepth: 1
+        }
+
     }],
     author: {
         username: String,
         id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            ref: "user",
+            autopopulate: {
+                maxDepth: 1
+            }
         }
     }
 });
+
+restaurentSchema.plugin(require('mongoose-autopopulate'))
 
 const RestaurentModel = mongoose.model('restaurent', restaurentSchema)
 

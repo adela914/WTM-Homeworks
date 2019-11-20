@@ -2,10 +2,10 @@ extends partials/header
 
 
 block content
-    div.addbtn
-        a(href='/restaurents/new') 
+    .addbtn
+        a(href="/restaurents/new") 
             button.btn.btn-lg Add a new Restaurent
-    .restaurents.container
+    .content.container
       .row.mb-5       
         each restaurent in restaurents
           .col-md-4.mt-5  

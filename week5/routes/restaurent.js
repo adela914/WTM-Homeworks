@@ -1,47 +1,54 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
-const bodyParser = require('body-parser')
 
-const UserService = require('../services/user-service')
-const RestaurentService = require('../services/restaurent-service')
-const CommentService = require('../services/comment-service')
-
+const UserService = require("../services/user-service")
+const RestaurentService = require("../services/restaurent-service")
+const CommentService = require("../services/comment-service")
 
 
 
-router.get('/restaurents', async(req, res) => {
+
+router.get("/restaurents", async(req, res) => {
     const restaurents = await RestaurentService.findAll()
-    res.render('list', { restaurents })
+    res.render("list", { restaurents })
 
 })
 
 
-router.get('/restaurents/new', function(req, res) {
-    res.render('new');
+router.get("/restaurents/new", function(req, res) {
+    res.render("new");
 })
 
 
 
 
-router.get('/restaurents/:id', async(req, res) => {
+router.get("/restaurents/:id", async(req, res) => {
     const restaurent = await RestaurentService.find(req.params.id)
-    res.render('data', { data: restaurent })
+    res.render("data", { restaurent: restaurent })
 })
 
 
 
 
-router.post('/restaurents/new', async function(req, res) {
-    const name = req.body.name
-    const location = req.body.location
-    const image = req.body.image
-    const description = req.body.description
-    const newRestaurent = { name, location, image, description }
+router.post("/restaurents/new", async function(req, res) {
 
-    await RestaurentService.add(newRestaurent)
+    try {
+        const name = req.body.name
+        const location = req.body.location
+        const image = req.body.image
+        const description = req.body.description
+        const newRestaurent = { name, location, image, description }
 
-    res.redirect('/restaurents')
-    console.log('a new restaurent is sucessfully added!');
+        await RestaurentService.add(newRestaurent)
+
+        res.redirect("/restaurents")
+        console.log("a new restaurent is sucessfully added!");
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send(`Server error: ${err.message}`);
+
+    }
 
 
 });
