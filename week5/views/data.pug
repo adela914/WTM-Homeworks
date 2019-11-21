@@ -3,7 +3,7 @@ extends partials/header
 
 block content
     .content
-      .card.mb-3.border-warning(style="max-width: 1000px;")
+      .card.mb-3.border-warning(style="max-width: 100%;")
         .row.no-gutters
           .col-md-4.imagecontainer
             img.dataimg.card-img(src=restaurent.image, alt="image")
@@ -14,16 +14,17 @@ block content
               p.card-text #{restaurent.description}
               p.card-text
                 small.text-muted Author
-      each comment in restaurent.comments 
-        .comments
+      .comments          
+        each comment in restaurent.comments 
           h #{comment.text}
-                 
-        .form-group
-          form(action="/restaurents/" + restaurent._id, method="post")
-            labelExample Comment
-            textarea.form-control.border-warning.comment(name='comment[text]', type='text', rows="2")
-            button.btn Submit
-        
+          h #{comment.createdAt}
+  
+      .form-group
+        form(action="/restaurents/" + restaurent._id, method="post")
+          labelExample Comment
+          textarea.form-control.border-warning.comment(name='comment[text]', type='text', rows="2")
+          button.btn Submit
+      
 
   
 

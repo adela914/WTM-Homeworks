@@ -155,13 +155,9 @@ button:hover {
 
 /* Showing a restaurent's details and comments page */
 
-.imagecontainer {
-    display: flex;
-    align-items: center;
-}
-
 .dataimg {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 
