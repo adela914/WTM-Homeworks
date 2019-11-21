@@ -5,7 +5,7 @@ const seedDB = require("./seeds")
 
 const indexRouter = require("./routes/index")
 const userRouter = require("./routes/user")
-const restaurentRouter = require("./routes/restaurent")
+const restaurantRouter = require("./routes/restaurant")
 const commentRouter = require("./routes/comment")
 
 require("./mongo-connection")
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(indexRouter);
 app.use(userRouter);
-app.use(restaurentRouter);
+app.use(restaurantRouter);
 app.use(commentRouter);
 seedDB();
 

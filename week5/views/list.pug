@@ -3,19 +3,19 @@ extends partials/header
 
 block content
     .addbtn
-        a(href="/restaurents/new") 
-            button.btn.btn-lg Add a new Restaurent
+        a(href="/restaurants/new") 
+            button.btn.btn-lg Add a new Restaurant
     .content.container
       .row.mb-5       
-        each restaurent in restaurents
+        each restaurant in restaurants
           .col-md-4.mt-5  
             .card.h-100(style="width: 18rem;")
-              img.card-img-top(src=restaurent.image)
+              img.card-img-top(src=restaurant.image)
               .card-body
-                  h5.card-title #{restaurent.name}
-                  h6.card-subtitle.mb-2.text-muted @#{restaurent.location}
-                  p.card-text #{restaurent.description}
-                  a.btn.btn-warning(href="/restaurents/" + restaurent._id) Checkout
+                  h5.card-title #{restaurant.name}
+                  h6.card-subtitle.mb-2.text-muted @#{restaurant.location}
+                  p.card-text #{restaurant.description}
+                  a.btn.btn-warning(href="/restaurants/" + restaurant._id) Checkout
                   
             
             

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Restaurent = require("./models/restaurent");
+const Restaurant = require("./models/restaurant");
 const Comment = require("./models/comment");
 const User = require("./models/user");
 
@@ -28,24 +28,24 @@ const seeds = [{
 
 async function seedDB() {
     try {
-        await Restaurent.remove({});
-        console.log("Restaurents removed");
+        await Restaurant.remove({});
+        console.log("Restaurants removed");
         await Comment.remove({});
         console.log("Comments removed");
         await User.remove({});
         console.log("Users removed");
 
         for (const seed of seeds) {
-            const restaurent = await Restaurent.create(seed);
-            console.log("Restaurent created");
+            const restaurant = await Restaurant.create(seed);
+            console.log("Restaurant created");
             const comment = await Comment.create({
                 text: "This place is great, but I wish it was even more spicy! 🌶",
                 author: "Kai"
             })
             console.log("Comment created");
-            restaurent.comments.push(comment);
-            restaurent.save();
-            console.log("Comment added to restaurent");
+            restaurant.comments.push(comment);
+            restaurant.save();
+            console.log("Comment added to restaurant");
         }
     } catch (err) {
         console.log(err);

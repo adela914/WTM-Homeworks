@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var restaurentSchema = new mongoose.Schema({
+var restaurantSchema = new mongoose.Schema({
     name: String,
     location: String,
     image: String,
@@ -24,8 +24,8 @@ var restaurentSchema = new mongoose.Schema({
     }
 });
 
-restaurentSchema.plugin(require('mongoose-autopopulate'))
+restaurantSchema.plugin(require('mongoose-autopopulate'))
 
-const RestaurentModel = mongoose.model('restaurent', restaurentSchema)
+const RestaurantModel = mongoose.model('restaurant', restaurantSchema)
 
-module.exports = RestaurentModel
+module.exports = RestaurantModel

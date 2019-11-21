@@ -9,7 +9,7 @@ http://localhost:3000
 ```
 
 ```
-http://localhost:3000/restaurents
+http://localhost:3000/restaurants
 ```
 
 ```
@@ -19,10 +19,10 @@ http://localhost:3000/users
 
 ###  AXIOS 
 
-### Users create a restaurent
+### Users create a restaurant
 
 ```
-axios.post('http://localhost:3000/restaurents', { name:"", location:"" }).then(console.log)
+axios.post('http://localhost:3000/restaurants', { name:"", location:"" }).then(console.log)
 ```
 
 ### Users can register

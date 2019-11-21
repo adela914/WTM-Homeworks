@@ -4,9 +4,9 @@ extends partials/header
 
 block content
     container.new
-        h1.add_new Add a New Restaurent!
-            div.newRestaurent
-                form.newform(action="/restaurents/new", method="post")
+        h1.add_new Add a New Restaurant!
+            div.newRestaurant
+                form.newform(action="/restaurants/new", method="post")
                     .field
                       input.form-control(name='name', type='text', placeholder='Name')
                       span.icon.is-small.is-left

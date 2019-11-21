@@ -4,8 +4,8 @@ const UserModel = require('../models/user')
 class UserService extends BaseService {
     model = UserModel
 
-    async saveRestaurent(user, restaurent) {
-        user.savedRestaurents.push(restaurent)
+    async saveRestaurant(user, restaurant) {
+        user.savedRestaurants.push(restaurant)
         await user.save()
     }
 }

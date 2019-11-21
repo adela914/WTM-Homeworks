@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const UserService = require('../services/user-service')
-const RestaurentService = require('../services/restaurent-service')
+const RestaurantService = require('../services/restaurant-service')
 const CommentService = require('../services/comment-service')
 
 router.get('/users', async(req, res) => {

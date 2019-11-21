@@ -112,7 +112,7 @@ button:hover {
 }
 
 
-/* Restaurents List */
+/* Restaurants List */
 
 .content {
     padding: 30px 100px 15px 100px;
@@ -126,7 +126,7 @@ button:hover {
 }
 
 
-/* Adding a new restaurent page */
+/* Adding a new restaurant page */
 
 .new {
     text-align: center;
@@ -137,7 +137,7 @@ button:hover {
     font-size: 2em;
 }
 
-.newRestaurent {
+.newRestaurant {
     display: block;
     text-align: center;
 }
@@ -153,7 +153,7 @@ button:hover {
 }
 
 
-/* Showing a restaurent's details and comments page */
+/* Showing a restaurant's details and comments page */
 
 .dataimg {
     width: 100%;

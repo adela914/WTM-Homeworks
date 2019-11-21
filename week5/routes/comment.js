@@ -3,15 +3,15 @@ const router = express.Router()
 
 
 const UserService = require("../services/user-service")
-const RestaurentService = require("../services/restaurent-service")
+const RestaurantService = require("../services/restaurant-service")
 const CommentService = require("../services/comment-service")
 
-router.post("/restaurents/:id", async(req, res) => {
+router.post("/restaurants/:id", async(req, res) => {
     try {
-        const restaurent = await RestaurentService.find(req.params.id)
+        const restaurant = await RestaurantService.find(req.params.id)
         const comment = req.body.comment
-        await CommentService.leaveComment(restaurent, comment)
-        await res.redirect("/restaurents/" + restaurent._id)
+        await CommentService.leaveComment(restaurant, comment)
+        await res.redirect("/restaurants/" + restaurant._id)
 
     } catch (err) {
         console.error(err.message);

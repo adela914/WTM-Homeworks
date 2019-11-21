@@ -4,10 +4,10 @@ const CommentModel = require("../models/comment")
 class CommentService extends BaseService {
     model = CommentModel
 
-    async leaveComment(restaurent, comment) {
+    async leaveComment(restaurant, comment) {
         CommentModel.create(comment)
-        restaurent.comments.push(comment)
-        await restaurent.save()
+        restaurant.comments.push(comment)
+        await restaurant.save()
         console.log("successfully added comment!")
 
 

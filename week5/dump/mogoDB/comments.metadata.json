@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"mogoDB.comments"}],"uuid":"4d4be1534e914c1b8fbf834a06046671"}
