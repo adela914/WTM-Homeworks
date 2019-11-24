@@ -24,25 +24,27 @@ router.get("/restaurants/new", function(req, res) {
 
 router.get("/restaurants/:id", async(req, res) => {
     const restaurant = await RestaurantService.find(req.params.id)
-    res.render("data", { restaurant: restaurant })
+    res.render("restaurant", { restaurant: restaurant })
 })
 
+router.get("/restaurants/:id/json", async(req, res) => {
+    const restaurant = await RestaurantService.find(req.params.id)
+    res.render("data", { data: restaurant })
+})
 
 
 
 router.post("/restaurants/new", async function(req, res) {
 
     try {
-        const name = req.body.name
-        const location = req.body.location
-        const image = req.body.image
-        const description = req.body.description
-        const newRestaurant = { name, location, image, description }
 
+        const newRestaurant = req.body.restaurant
         await RestaurantService.add(newRestaurant)
 
         res.redirect("/restaurants")
-        console.log("a new restaurant is sucessfully added!");
+
+        console.log("a new restaurant is sucessfully added!")
+        console.log(newRestaurant)
 
     } catch (err) {
         console.error(err.message);
@@ -52,5 +54,11 @@ router.post("/restaurants/new", async function(req, res) {
 
 
 });
+
+
+router.delete('/restaurants/:id', async(req, res) => {
+    const restaurant = await RestaurantService.del(req.params.id)
+    res.send(restaurant)
+})
 
 module.exports = router

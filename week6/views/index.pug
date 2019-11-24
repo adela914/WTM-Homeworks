@@ -1,0 +1,20 @@
+extends partials/header
+
+
+
+block content
+
+    section#indexcontent
+        .container.indexcontainer
+            img.food(src="images/sashimi.png", alt="sashimi")            
+            .container2
+                p.introduction In Berlin there are a plenty of Korean restaurants! But how do you know if it's authentic Korean restaurant or not? No worries 🙅 Here you can find a lot of Korean restaurants with its informations and other foodie's reviews! Please do check our list out and have a good Korean Mogo! 🍱 You need to register or login to see all the secret places 👇
+                .container3
+                    a(href='/register')
+                        button.btn.btn-lg(type="submit") Register   
+                    a(href="/login")
+                        button.btn.btn-lg(type="submit") Login  
+
+    include partials/footer
+
+

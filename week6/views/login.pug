@@ -1,0 +1,21 @@
+extends partials/header
+
+block content
+    container.formcontainer
+      h1.formhead Log in to Mogo!
+              div.formdiv
+                  form.form(action="/login", method="post")
+                      .field
+                        input.form-control(name='user[username]', type='text', placeholder='Username')
+                        span.icon.is-small.is-left
+                      .field
+                        i.fas.fa-fish
+                        input.form-control(name='user[password]',type='text', placeholder='Password')
+                        span.icon.is-small.is-left
+                      .field
+                          p.control
+                              button.btn.btn-lg Sign Up
+
+                
+
+    include partials/footer

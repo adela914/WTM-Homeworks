@@ -11,17 +11,7 @@ var restaurantSchema = new mongoose.Schema({
             maxDepth: 1
         }
 
-    }],
-    author: {
-        username: String,
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "user",
-            autopopulate: {
-                maxDepth: 1
-            }
-        }
-    }
+    }]
 });
 
 restaurantSchema.plugin(require('mongoose-autopopulate'))

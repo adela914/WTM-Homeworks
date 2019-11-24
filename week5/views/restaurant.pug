@@ -1,0 +1,34 @@
+extends partials/header
+
+
+block content
+    .content
+      .card.mb-3.border-warning(style="max-width: 100%;")
+        .row.no-gutters
+          .col-md-4.imagecontainer
+            img.dataimg.card-img(src=restaurant.image, alt="image")
+          .col-md-8
+            .card-body
+              h4.card-title   #{restaurant.name}
+              h5.card-text @ #{restaurant.location}
+              p.card-text #{restaurant.description}
+              p.card-text
+                small.text-muted Author
+      .comments          
+        each comment in restaurant.comments 
+          p #{comment.text}
+          p #{comment.createdAt}
+  
+      .form-group
+        form(action="/restaurants/" + restaurant._id, method="post")
+          labelExample Comment
+          textarea.form-control.border-warning.comment(name="comment[text]", type="text", rows="2")
+          button.btn Submit
+      
+
+  
+
+
+
+        
+    include partials/footer

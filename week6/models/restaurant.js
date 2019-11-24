@@ -1,0 +1,31 @@
+var mongoose = require("mongoose");
+var restaurantSchema = new mongoose.Schema({
+    name: String,
+    location: String,
+    image: String,
+    description: String,
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "comment",
+        autopopulate: {
+            maxDepth: 1
+        }
+
+    }],
+    author: {
+        username: String,
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "user",
+            autopopulate: {
+                maxDepth: 1
+            }
+        }
+    }
+});
+
+restaurantSchema.plugin(require('mongoose-autopopulate'))
+
+const RestaurantModel = mongoose.model('restaurant', restaurantSchema)
+
+module.exports = RestaurantModel

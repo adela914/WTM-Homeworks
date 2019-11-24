@@ -5,10 +5,10 @@ class CommentService extends BaseService {
     model = CommentModel
 
     async leaveComment(restaurant, comment) {
-        CommentModel.create(comment)
+        // CommentModel.create(comment)
         restaurant.comments.push(comment)
         await restaurant.save()
-        console.log("successfully added comment!")
+        console.log("successfully added the comment!")
 
 
     }

@@ -39,8 +39,7 @@ async function seedDB() {
             const restaurant = await Restaurant.create(seed);
             console.log("Restaurant created");
             const comment = await Comment.create({
-                text: "This place is great, but I wish it was even more spicy! 🌶",
-                author: "Kai"
+                text: "This place is great, but I wish it was even more spicy! 🌶"
             })
             console.log("Comment created");
             restaurant.comments.push(comment);

@@ -7,7 +7,9 @@ const CommentService = require('../services/comment-service')
 
 router.get('/users', async(req, res) => {
     const users = await userService.findAll()
-    res.render('list', { items: users })
+    res.render("data", { data: users })
+
+    res.send(users)
 
 })
 
@@ -26,10 +28,17 @@ router.get('/users/:id', async(req, res) => {
     res.render('data', { data: user })
 })
 
+router.get('/users/:id/json', async(req, res) => {
+    const user = await UserService.find(req.params.id)
+    if (!user) res.status(404)
+    res.send(user)
+})
+
 
 router.delete('/users/:id', async(req, res) => {
     const user = await UserService.del(req.params.id)
     res.send(user)
+    console.log("User deleted")
 })
 
 

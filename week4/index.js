@@ -1,12 +1,8 @@
-// const User = require("./models/user");
-// const Restaurent = require("./models/restaurent")
-// const Comment = require("./models/comment")
 const UserService = require('./services/user-service')
 const CommentService = require('./services/comment-service')
 const RestaurentService = require('./services/restaurent-service')
 const express = require('express');
 const bodyParser = require('body-parser')
-const axios = require('axios');
 
 
 const app = express();
