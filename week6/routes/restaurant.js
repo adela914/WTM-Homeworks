@@ -36,7 +36,8 @@ router.get("/:id", async(req, res) => {
 router.get("/:id/json", async(req, res) => {
     const restaurant = await RestaurantService.find(req.params.id)
     if (!restaurant) res.status(404)
-    res.render("data", { data: restaurant })
+    res.send(restaurant)
+
 })
 
 
@@ -48,9 +49,8 @@ router.post("/new", async function(req, res) {
         const newRestaurant = req.body
         const restaurant = await RestaurantService.add(newRestaurant)
         res.send(restaurant)
-        res.redirect("/")
+        res.status(200);
 
-        console.log("a new restaurant is sucessfully added!")
 
     } catch (err) {
         console.error(err.message);

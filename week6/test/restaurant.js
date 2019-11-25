@@ -41,32 +41,6 @@ test("Create new restaurant", async t => {
 
 })
 
-test("Fetch a restaurant", async t => {
-    t.plan(3)
-
-    const restaurantToCreate = {
-        name: "Test1",
-        location: "Test",
-        comments: []
-    }
-    const restaurantCreated =
-        (await request(app)
-            .post("/restaurants/new")
-            .send(restaurantToCreate)).body
-
-    const fetchRes = await request(app).get(`/restaurants/${restaurantCreated._id}`)
-    t.is(fetchRes.status, 200)
-
-    const fetchResJson = await request(app).get(`/restaurants/${restaurantCreated._id}/json`)
-
-    t.is(fetchResJson.status, 200)
-
-
-    const restaurantFetched = fetchResJson.body
-    t.deepEqual(restaurantFetched, restaurantCreated)
-
-
-})
 
 test("Delete a restaurant", async t => {
     t.plan(4)
@@ -92,6 +66,33 @@ test("Delete a restaurant", async t => {
     t.is(fetchJson.status, 404)
 
 })
+
+test("Fetch a restaurant", async t => {
+    t.plan(3);
+    const restaurantToCreate = {
+        name: "Test1",
+        location: "Test",
+        comments: []
+    };
+    try {
+        const restaurantCreated = (await request(app)
+            .post("/restaurants/new")
+            .send(restaurantToCreate)).body;
+        const fetchRes = await request(app).get(
+            `/restaurants/${restaurantCreated._id}`
+        );
+        t.is(fetchRes.status, 200);
+        const fetchResJson = await request(app).get(
+            `/restaurants/${restaurantCreated._id}/json`
+        );
+        t.is(fetchResJson.status, 200);
+        const restaurantFetched = fetchResJson.body;
+        t.deepEqual(restaurantFetched, restaurantCreated);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send(`Server error: ${err.message}`);
+    }
+});
 
 test("Get list of restaurants", async t => {
 

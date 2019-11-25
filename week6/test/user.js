@@ -35,7 +35,6 @@ test("Show the list of users", async t => {
     t.true(jsonRes.body.length > 0)
 
 
-
 })
 
 test("Fetch a user", async t => {

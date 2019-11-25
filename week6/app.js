@@ -19,7 +19,7 @@ app.use(landingRouter);
 app.use('/users', userRouter);
 app.use('/restaurants', restaurantRouter);
 app.use(commentRouter);
-seedDB();
+// seedDB();
 
 
 module.exports = app;

@@ -17,7 +17,7 @@ router.get("/comments/json", async(req, res) => {
 
 router.post('/restaurants/:id/', async(req, res) => {
     const restaurant = await RestaurantService.find(req.params.id)
-    const newComment = await CommentService.add(req.body.comment)
+    const newComment = await CommentService.add(req.body)
     await CommentService.leaveComment(restaurant, newComment)
 
     console.log(newComment)
@@ -26,7 +26,7 @@ router.post('/restaurants/:id/', async(req, res) => {
 
 
 
-router.delete('comments/:id', async(req, res) => {
+router.delete('/comments/:id', async(req, res) => {
     const comment = await CommentService.del(req.params.id)
     res.send(comment)
 })
