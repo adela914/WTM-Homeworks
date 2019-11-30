@@ -1,0 +1,29 @@
+extends partials/header
+
+
+block content
+    .addbtn
+        a(href="/restaurants/new") 
+            button.btn.btn-lg Add a new Restaurant
+    .content.container
+      .row.mb-5       
+        each restaurant in restaurants
+          .col-md-4.mt-5  
+            .card.h-100(style="width: 18rem;")
+              img.card-img-top(src=restaurant.image)
+              .card-body
+                  h5.card-title #{restaurant.name}
+                  h6.card-subtitle.mb-2.text-muted @#{restaurant.location}
+                  p.card-text #{restaurant.description}
+                  a.btn.btn-warning(href="/restaurants/" + restaurant._id) Checkout
+                  
+            
+            
+                  
+
+
+        
+
+
+    include partials/footer
+

@@ -1,0 +1,34 @@
+extends partials/header
+
+
+
+block content
+    container.formcontainer
+        h1.formhead Add a New Restaurant!
+            div.formdiv
+                form.form(action="/restaurants/new", method="post")
+                    .field
+                      input.form-control(name='restaurant[name]', type='text', placeholder='Name')
+                      span.icon.is-small.is-left
+                                
+                        
+                    .field
+                      i.fas.fa-fish
+                      input.form-control(name='restaurant[location]',type='text', placeholder='Location')
+                      span.icon.is-small.is-left
+                                
+                    .field
+                      i.fas.fa-utensils
+                      input.form-control(name='restaurant[image]', type='text',placeholder='Image URL')
+                      span.icon.is-small.is-left
+                              
+                    .field
+                      i.fas.fa-fish
+                      textarea.form-control(name='restaurant[description]', type='text', placeholder='Description')
+                    .field
+                        p.control
+                            button.btn.btn-lg Share
+
+                
+
+        include partials/footer

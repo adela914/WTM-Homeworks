@@ -22,12 +22,6 @@ router.post("/", async(req, res) => {
     }
 });
 
-router.get('/:id/json', async(req, res) => {
-    const user = await UserService.find(req.params.id)
-    if (!user) res.status(404)
-    res.send(user)
-})
-
 router.get("/:id", async(req, res) => {
     const { id } = req.params;
     try {
@@ -43,24 +37,29 @@ router.get("/:id", async(req, res) => {
     }
 });
 
-// router.post("/:id/restaurants/:restaurantId", async(req, res) => {
-//     try {
+//Save a resturant in user's list
+router.post("/:userId/save/:restaurantId", async(req, res) => {
 
-//         const user = await UserService.find(req.params.id)
-//         const restaurant = await RestaurantService.find(req.params.restaurantId)
-//         console.log(req.params.id);
-//         console.log(req.params.restaurantId);
-//         await UserService.saveRestaurant(user, restaurant)
-//         res.send(user)
-//     } catch (err) {
-//         console.error(err.message);
-//         res.status(500).send(`Server error: ${err.message}`);
-//     }
-// });
-// router.delete('/:id', async(req, res) => {
-//     const user = await UserService.del(req.params.id)
-//     res.send(user)
-// })
+    const { userId, restaurantId } = req.params
+    try {
+
+        const user = await UserService.find(userId)
+        const restaurant = await RestaurantService.find(restaurantId)
+        await UserService.saveRestaurant(user, restaurant)
+        res.send(user)
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send(`Server error: ${err.message}`);
+    }
+});
+
+
+
+router.delete('/:id', async(req, res) => {
+    const user = await UserService.del(req.params.id)
+    res.send(user)
+})
 
 
 

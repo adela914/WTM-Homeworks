@@ -1,0 +1,191 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo', sans-serif;
+    margin-bottom: 60px;
+    /* Margin bottom by footer height */
+}
+
+
+/* Navigation bar style */
+
+a {
+    text-decoration: none;
+    color: #3a1f5d;
+}
+
+a:visited {
+    color: #3a1f5d;
+}
+
+a:hover {
+    color: #cf455c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 3em;
+    color: rgb(253, 210, 74) !important;
+    font-family: 'Pacifico', cursive;
+}
+
+.navitems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 500;
+    width: 50%;
+    font-size: 1.3em;
+}
+
+
+/* Index page */
+
+#title {
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#indexcontent {
+    background-color: white;
+    height: 500px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.indexcontainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 70px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.introduction {
+    padding-left: 60px;
+    color: #3a1f5d;
+}
+
+
+/* Buttons Style */
+
+button:hover {
+    cursor: pointer;
+}
+
+.btn {
+    background-color: rgb(253, 210, 74) !important;
+    color: white !important;
+    border-radius: 7em;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+}
+
+
+/* Image in first page */
+
+.food {
+    height: 350px;
+    width: 350px;
+}
+
+
+/* Restaurants List */
+
+.content {
+    padding: 30px 100px 15px 100px;
+}
+
+.addbtn {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 10%;
+    padding-right: 20%;
+}
+
+
+/* Form style */
+
+.formcontainer {
+    text-align: center;
+}
+
+.formhead {
+    color: #cf455c;
+    font-size: 2em;
+}
+
+.formdiv {
+    display: block;
+    text-align: center;
+}
+
+.form {
+    width: 400px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* Showing a restaurant's details and comments page */
+
+.dataimg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Comment */
+
+.comment {
+    width: 500px
+}
+
+
+/* Footer style */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    /* Set the fixed height of the footer here */
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: rgb(253, 210, 74);
+    text-align: center;
+}
+
+
+/* #mogofooter {
+    background: rgb(253, 210, 74);
+    color: #3a1f5d;
+    text-align: center;
+    height: 100px;
+} */
