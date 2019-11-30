@@ -1,3 +1,3 @@
 <template lang="pug">
-  p This is about page.
+  p a form of adding a restaurant
 </template>
