@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Contact from '../views/Contact.vue'
-import NewRestaurant from '../views/NewRestaurant.vue'
-import HotRestaurant from '../views/HotRestaurant.vue'
+import NewRes from '../views/NewRes.vue'
+import HotRes from '../views/HotRes.vue'
+import Restaurant from '../views/Restaurant.vue'
 
 Vue.use(VueRouter)
 
@@ -25,13 +26,18 @@ const routes = [{
     },
     {
         path: '/new',
-        name: 'newRestaurant',
-        component: NewRestaurant
+        name: 'newRes',
+        component: NewRes
     },
     {
         path: '/hot',
-        name: 'hotRestaurant',
-        component: HotRestaurant
+        name: 'hotRes',
+        component: HotRes
+    },
+    {
+        path: '/restaurant',
+        name: 'restaurant',
+        component: Restaurant
     }
 
 ]
@@ -43,3 +49,12 @@ const router = new VueRouter({
 })
 
 export default router
+
+
+
+
+// {
+//     path: '/:id',
+//     name: 'restaurant',
+//     component: Restaurant
+// }

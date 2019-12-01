@@ -7,7 +7,7 @@
                 router-link.logo(to="/") MOGO!
               .navitems
                   router-link(to="/new") Share
-                  router-link(to="/hot") Hot
+                  router-link(to="/hot") Hot🔥
                   router-link(to="/contact") Contact
                   router-link(to="/about") About
     main

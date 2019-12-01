@@ -5,8 +5,8 @@
       Top western road trips
     v-card-subtitle 1,000 miles of wonder
     v-card-actions
-      v-btn(text) Share
-      v-btn(color="purple" text) Explore
+      v-btn(text) Explore
+      v-btn(color="purple" text) Like
       v-spacer
       v-btn(icon @click="show = !show")
         v-icon {{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
@@ -22,7 +22,7 @@
     data: () => ({
       show: false,
     }),
-    name: 'RestaurantCard',
+    name: 'ResCard',
     props: ['Home']
   }
 </script>

@@ -1,3 +1,5 @@
 <template lang="pug">
-  p a form of adding a restaurant
+  p Posted Comments
 </template>
+
+

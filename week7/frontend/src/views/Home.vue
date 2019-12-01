@@ -1,6 +1,12 @@
 <template lang="pug">
-  div.container
-    RestaurantCard
+  content
+    Search
+    v-container.container
+        v-row
+          v-col(cols="12" md="4")
+            ResCard
+
+      
    
     
       
@@ -25,12 +31,14 @@
 </style>
 
 <script>
-import RestaurantCard from '@/components/RestaurantCard.vue'
+import ResCard from '@/components/ResCard.vue'
+import Search from '@/components/Search.vue'
 
 export default {
   name: 'Home',
   components: {
-    RestaurantCard
+    ResCard,
+    Search
   }
 }
 </script>
