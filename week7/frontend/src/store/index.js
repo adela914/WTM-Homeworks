@@ -8,14 +8,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        restaurants: null
+        restaurants: [],
+        comments: []
     },
-    mutations: {},
-    actions: {
-        fetchRestaurant() {
-            const restaurants = axios.get('http://localhost:3000/restaurants')
-            console.log(restaurants)
+    mutations: {
+        SET_RES(state, data) {
+            state.restaurants = data
+            console.log(data)
         }
+    },
+    actions: {
+        async fetchRes({ commit }) {
+            const restaurants = await axios.get('http://localhost:3000/restaurants')
+            commit('SET_RES', restaurants.data)
+        }
+
 
     },
     modules: {}

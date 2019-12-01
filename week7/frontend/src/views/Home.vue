@@ -3,10 +3,8 @@
     Search
     v-container.container
         v-row
-          v-col(cols="12" md="4")
-            ResCard
+          ResCard(v-for="restaurant in restaurants", :restaurant="restaurant", :key="restaurant._id")
 
-      
    
     
       
@@ -33,12 +31,22 @@
 <script>
 import ResCard from '@/components/ResCard.vue'
 import Search from '@/components/Search.vue'
-
+import { mapState, mapActions } from 'vuex'
+ 
 export default {
   name: 'Home',
   components: {
     ResCard,
     Search
+  },
+  computed: {
+    ...mapState(['restaurants'])
+  },
+  methods: {
+    ...mapActions(['fetchRes'])
+  },
+  created() {
+    this.fetchRes()
   }
 }
 </script>

@@ -1,32 +1,72 @@
-### start
+### To start server
 
 ```
-nodemon index.js
-```
+$ cd week7
+$ npm i
+$ npm cors
+$ nodemon index.js
 
 ```
+Make sure MongoDB is running.
+
+```
+$ mongod
+$ mongo
+```
+
 http://localhost:3000
+
+### Frontend
 ```
 
-```
-http://localhost:3000/restaurants
-```
+$ cd frontend
+$ npm install -D pug pug-plain-loader
+$ vue add vuetify
+$ npm i axios
+$ npm run serve
 
 ```
-http://localhost:3000/users
-```
+http://localhost:8080/
 
 
 ###  AXIOS 
 
-### Users create a restaurant
+#### Restaurant
+
+Get list of restaurants
+```
+axios.get('http://localhost:3000/restaurants').then(console.log)
+```
+Get a specific restaurant
+```
+axios.get('http://localhost:3000/restaurants/:id').then(console.log)
+```
+Create a new restaurant
+```
+axios.post('http://localhost:3000/restaurants/new', {name: 'test', location: 'location'}).then(console.log)
+```
+Update a restaurant
+```
+axios.put('http://localhost:3000/restaurants/update/:id', {name: 'test updated', location: 'location updated'}).then(console.log)
+```
+Delete a reestaurant
+```
+axios.delete('http://localhost:3000/restaurants/:id').then(console.log)
+```
+
+#### Comment
+
+Get list of comments
+```
+axios.get('http://localhost:3000/comments').then(console.log)
+```
+Create a comment on a restaurant
 
 ```
-axios.post('http://localhost:3000/restaurants', { name:"", location:"" }).then(console.log)
+axios.post('http://localhost:3000/restaurants/:id', {text: 'test', author: 'location'}).then(console.log)
 ```
 
-### Users can register
-
+Delete a comment 
 ```
-axios.post('http://localhost:3000/users', { username:"", password:"" }).then(console.log)
+axios.delete('http://localhost:3000/comments/:id').then(console.log)
 ```
