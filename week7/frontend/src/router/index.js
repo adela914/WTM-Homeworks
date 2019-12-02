@@ -5,6 +5,7 @@ import Contact from '../views/Contact.vue'
 import NewRes from '../views/NewRes.vue'
 import HotRes from '../views/HotRes.vue'
 import Restaurant from '../views/Restaurant.vue'
+import About from '../views/About.vue'
 
 Vue.use(VueRouter)
 
@@ -16,8 +17,7 @@ const routes = [{
         {
             path: '/about',
             name: 'about',
-            component: () =>
-                import ( /* webpackChunkName: "about" */ '../views/About.vue')
+            component: About
         },
         {
             path: '/contact',

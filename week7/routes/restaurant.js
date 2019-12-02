@@ -30,28 +30,43 @@ router.post("/new", async function(req, res) {
 
         const newRestaurant = req.body
         const restaurant = await RestaurantService.add(newRestaurant)
-        res.send(restaurant)
-        res.status(200)
+        res.status(200).send(restaurant)
+
 
     })
     // update a restaurant
 
-router.put('/update/:id', async(req, res) => {
+router.put("/update/:id", async(req, res) => {
 
     const restaurant = await RestaurantService.find(req.params.id)
 
     await RestaurantService.update(req.params.id, req.body)
-    res.send(restaurant)
-    res.status(200)
+    res.status(200).send(restaurant)
+
 
 
 })
 
 // delete a restaurant
 
-router.delete('/:id', async(req, res) => {
+router.delete("/:id", async(req, res) => {
     const restaurant = await RestaurantService.del(req.params.id)
     res.send(restaurant)
+})
+
+
+router.get("/rank", async(req, res) => {
+
+    const hotRes = await RestaurantService.sortRes(3)
+    res.send(hotRes)
+    console.log(hotRes)
+})
+
+router.get("/search/:name", async(req, res) => {
+    const foundRes = await RestaurantService.findByName(req.params.name)
+    console.log(foundRes)
+    res.send(foundRes)
+
 })
 
 module.exports = router

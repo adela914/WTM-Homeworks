@@ -49,7 +49,7 @@ Update a restaurant
 ```
 axios.put('http://localhost:3000/restaurants/update/:id', {name: 'test updated', location: 'location updated'}).then(console.log)
 ```
-Delete a reestaurant
+Delete a restaurant
 ```
 axios.delete('http://localhost:3000/restaurants/:id').then(console.log)
 ```

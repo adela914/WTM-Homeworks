@@ -21,42 +21,31 @@
 </template>
 
 <script>
-
 </script>
 
 <style scoped>
-
-
 /* Navigation bar style */
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Questrial&display=swap');
-
-
-
 .app {
   font-family:'Questrial', sans-serif;
 }
-
 a {
     text-decoration: none;
     color: #3a1f5d;
 }
-
 a:visited {
     color: #3a1f5d;
 }
-
 a:hover {
     color: #cf455c;
     text-decoration: none;
     cursor: pointer;
 }
-
 .logo {
     font-size: 3em;
     color: rgb(253, 210, 74) !important;
     font-family: 'Pacifico', cursive;
 }
-
 .navitems {
     display: flex;
     flex-direction: row;
@@ -67,13 +56,10 @@ a:hover {
     font-size: 1.3em;
     
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
 }
-
-
 #title {
     background-color: white;
     padding-left: 10%;
@@ -83,9 +69,7 @@ main {
     padding-left: 10%;
     padding-right: 10%;
 }
-
 /* footer */
-
 footer {
   position: fixed;
    left: 0;
@@ -96,6 +80,4 @@ footer {
    color: white;
    text-align: center;
 }
-
-
 </style>

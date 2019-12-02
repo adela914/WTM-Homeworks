@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-var cors = require('cors')
+const cors = require('cors')
 
 
 const landingRouter = require("./routes/landing")
@@ -21,7 +21,6 @@ app.use(landingRouter);
 app.use('/users', userRouter);
 app.use('/restaurants', restaurantRouter);
 app.use(commentRouter);
-// seedDB();
 
 
 module.exports = app;

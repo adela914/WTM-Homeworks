@@ -19,4 +19,9 @@ module.exports = class Service {
         return this.model.updateOne({ _id: itemId }, itemBody, { new: true })
     }
 
+    async findByParameter(param) {
+        return this.model.find(param)
+    }
+
+
 }
