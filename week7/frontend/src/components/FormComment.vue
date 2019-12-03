@@ -1,3 +1,50 @@
 <template lang="pug">
-  p Comment Form.
+  main
+    p {{ restaurant._id }}
+      v-col
+        v-col(cols="5")
+          v-text-field(v-model="author" label="Name"
+                  placeholder="What's your name?")
+        v-col(cols="5")        
+          v-textarea(v-model="text" solo
+                name="input-7-4"
+                label="What do you think?" )
+          v-btn(@click="submitComment") Comment
+    
+
+
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+
+
+  export default { 
+    data() {
+      return {
+        author: null,
+        text: null,
+      }
+    },
+    methods: {
+      ...mapActions(['addComment']),
+      submitComment() {
+        
+        const newComment= {
+          author: this.author,
+          text: this.text
+        }
+        this.addComment(newComment, this.restaurant._id)
+        this.clearForm()
+        // this.$router.push(`/restaurant/${this.restaurant._id}`)
+      },
+      clearForm() {
+        this.author = null,
+        this.text = null
+      }
+    },
+    name: 'FormComment',
+    props: ['restaurant']
+    
+  }
+</script>

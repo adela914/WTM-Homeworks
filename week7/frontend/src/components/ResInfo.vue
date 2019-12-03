@@ -2,17 +2,21 @@
   div
     v-card  
       v-responsive
-         v-img(src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px")
-         v-card-title Restaurant's name
-         v-card-subtitle Location 
-         v-card-text Description
+         v-img(v-bind:src="restaurant.image" height="200px")
+         v-card-title {{ restaurant.name }}
+         v-card-subtitle {{ restaurant.location }}
+         v-card-text {{ restaurant.description }}
 </template>
 
 <script>
   export default { 
    
     name: 'ResInfo',
-    props: ['Home']
+    props: {
+      restaurant: {
+        type: Object
+      }
+    }
   }
 </script>
 

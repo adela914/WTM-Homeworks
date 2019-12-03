@@ -15,6 +15,12 @@ const routes = [{
             component: Home
         },
         {
+            path: '/restaurant/:id',
+            name: 'restaurant',
+            component: Restaurant
+        },
+
+        {
             path: '/about',
             name: 'about',
             component: About
@@ -33,11 +39,6 @@ const routes = [{
             path: '/hot',
             name: 'hotRes',
             component: HotRes
-        },
-        {
-            path: '/restaurant',
-            name: 'restaurant',
-            component: Restaurant
         }
 
     ]

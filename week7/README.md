@@ -3,7 +3,7 @@
 ```
 $ cd week7
 $ npm i
-$ npm cors
+$ npm i cors
 $ nodemon index.js
 
 ```

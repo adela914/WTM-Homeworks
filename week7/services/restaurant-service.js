@@ -10,9 +10,10 @@ class RestaurantService extends BaseService {
         return foundRes
     }
     async sortRes(num) {
-        const hotRes = await this.findAll().sort({ "likes": -1 }).limit(num).lean()
+        const hotRes = await this.model.find().sort({ "likes": -1 }).limit(num).lean()
         return hotRes
     }
+
 }
 
 module.exports = new RestaurantService()

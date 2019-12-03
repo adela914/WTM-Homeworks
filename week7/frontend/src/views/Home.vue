@@ -19,12 +19,6 @@
   flex-direction: row;
   
 }
-/* Image in first page */
-
-.food {
-    height: 350px;
-    width: 350px;
-}
 
 </style>
 
