@@ -3,12 +3,8 @@
     Search
     v-container.container
         v-row
-          ResCard(v-for="restaurant in restaurants", :restaurant="restaurant", :key="restaurant._id")
+          ResCard(v-for="restaurant in restaurants", :restaurant="restaurant" :key="restaurant._id")
 
-   
-    
-      
-    
 </template>
 
 

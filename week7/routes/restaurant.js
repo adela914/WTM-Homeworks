@@ -27,11 +27,12 @@ router.get("/:id", async(req, res) => {
 
 router.post("/new", async function(req, res) {
 
-        const newRestaurant = req.body
-        const restaurant = await RestaurantService.add(newRestaurant)
-        res.status(200).send(restaurant)
-    })
-    // update a restaurant
+    const newRestaurant = req.body
+    const restaurant = await RestaurantService.add(newRestaurant)
+    res.status(200).send(restaurant)
+})
+
+// update a restaurant
 
 router.put("/update/:id", async(req, res) => {
 
@@ -62,6 +63,16 @@ router.get("/search/:name", async(req, res) => {
     const foundRes = await RestaurantService.findByName(req.params.name)
     res.status(200).send(foundRes)
 
+})
+
+// Like a restaurant / test needed
+
+router.put('/like/:id', async(req, res) => {
+    const restaurant = await RestaurantService.find(req.params.id)
+    await RestaurantService.likeRes(restaurant)
+    console.log(restaurant)
+
+    res.send(restaurant)
 })
 
 module.exports = router

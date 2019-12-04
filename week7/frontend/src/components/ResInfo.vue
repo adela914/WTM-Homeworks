@@ -6,6 +6,9 @@
          v-card-title {{ restaurant.name }}
          v-card-subtitle {{ restaurant.location }}
          v-card-text {{ restaurant.description }}
+         v-btn Edit
+         v-btn Delete
+         
 </template>
 
 <script>

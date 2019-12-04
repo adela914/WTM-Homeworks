@@ -23,7 +23,7 @@ router.post('/restaurants/:id', async(req, res) => {
 })
 
 
-
+// Delete a comment
 router.delete('/comments/:id', async(req, res) => {
     const comment = await CommentService.del(req.params.id)
     res.status(200).send(comment)

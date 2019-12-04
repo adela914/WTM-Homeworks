@@ -7,7 +7,10 @@ var restaurantSchema = new mongoose.Schema(
         location: String,
         image: String,
         description: String,
-        likes: Number,
+        likes: {
+            type: Number,
+            default: 0
+        },
         comments: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: "comment",

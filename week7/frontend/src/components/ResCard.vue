@@ -6,7 +6,7 @@
       v-card-subtitle {{ restaurant.location }}
       v-card-actions
         v-btn(text router :to="{ name:'restaurant', params: {id: restaurant._id} }") Explore
-        v-btn(color="purple" text) Like
+        v-btn(@click="likeRestaurant" color="purple" text) Like
         v-card-subtitle {{ restaurant.likes }}
         v-spacer
         v-btn(icon @click="show = !show")
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 
   export default { 
 
@@ -30,6 +31,14 @@
       restaurant: {
         type: Object
       }
+    },
+    methods: {
+     ...mapActions(['likeRes']),
+     likeRestaurant() {
+
+       this.likeRes(this.restaurant._id)
+      
+     }
     }
   }
 

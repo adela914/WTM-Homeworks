@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-// import { assertUnaryLike } from 'babel-types'
 
 
 Vue.use(Vuex)
@@ -32,9 +31,9 @@ export default new Vuex.Store({
         addComment(state, data) {
             state.comments.unshift(data)
         },
-        likeRes(state, newLike) {
-            state.restaurant.likes = newLike
-
+        likeRes(state, likedUpdRes) {
+            const foundRes = state.restaurants.find(x => x._id === likedUpdRes._id)
+            foundRes.likes = likedUpdRes.likes
         }
     },
     actions: {
@@ -58,15 +57,13 @@ export default new Vuex.Store({
             const newRes = await axios.post("http://localhost:3000/restaurants/new", res)
             commit('addRes', newRes.data)
         },
-        async addComment({ commit }, comment, id) {
+        async addComment({ commit }, [comment, id]) {
             const newComment = await axios.post(`http://localhost:3000/restaurants/${id}`, comment)
             commit('addComment', newComment.data)
-            console.log(comment)
-            console.log(id)
         },
-        async likeRes({ commit }, restaurant) {
-            const newLike = restaurant.likes + 1
-            commit('likeRes', newLike)
+        async likeRes({ commit }, id) {
+            const likedRes = await axios.put(`http://localhost:3000/restaurants/like/${id}`)
+            commit('likeRes', likedRes.data)
         }
 
 

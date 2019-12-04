@@ -8,8 +8,6 @@ class CommentService extends BaseService {
         restaurant.comments.push(comment)
         await restaurant.save()
         console.log("successfully added comment!")
-
-
     }
 }
 

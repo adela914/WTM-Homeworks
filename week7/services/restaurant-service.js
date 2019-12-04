@@ -14,6 +14,11 @@ class RestaurantService extends BaseService {
         return hotRes
     }
 
+    async likeRes(restaurant) {
+        await restaurant.likes++
+            await restaurant.save()
+    }
+
 }
 
 module.exports = new RestaurantService()

@@ -3,7 +3,7 @@
     ResInfo(:restaurant="restaurant")
     Comments(:comments="restaurant.comments")
     FormComment(:restaurant="restaurant")
-     
+    
 </template>
 
 
