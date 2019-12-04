@@ -8,9 +8,9 @@
 
 
 <script>
-import ResInfo from '@/components/ResInfo.vue'
+import ResInfo from '@/components/Cards/ResInfoCard.vue'
 import Comments from '@/components/Comments.vue'
-import FormComment from '@/components/FormComment.vue'
+import FormComment from '@/components/Forms/CommentForm.vue'
 import { mapState, mapActions } from 'vuex'
 
 

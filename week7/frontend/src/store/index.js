@@ -19,21 +19,24 @@ export default new Vuex.Store({
         SET_ARES(state, data) {
             state.restaurant = data
         },
+        // SET_ARESBYNAME(state, data) {
+        //     state.restaurant = data
+        // },
         SET_HOTRES(state, data) {
             state.hotRestaurants = data
         },
-        addRes(state, res) {
-            state.restaurants.unshift(res)
-        },
-        search(state, data) {
-            state.restaurant = data
+        addRes(state, data) {
+            state.restaurants.unshift(data)
         },
         addComment(state, data) {
             state.comments.unshift(data)
         },
-        likeRes(state, likedUpdRes) {
-            const foundRes = state.restaurants.find(x => x._id === likedUpdRes._id)
-            foundRes.likes = likedUpdRes.likes
+        likeRes(state, data) {
+            const foundRes = state.restaurants.find(x => x._id === data._id)
+            foundRes.likes = data.likes
+        },
+        delRes(state, data) {
+            state.restaurants.filter(r => r._id !== data._id)
         }
     },
     actions: {
@@ -45,10 +48,12 @@ export default new Vuex.Store({
             const restaurant = await axios.get(`http://localhost:3000/restaurants/${id}`)
             commit('SET_ARES', restaurant.data)
         },
-        async search({ commit }, name) {
-            const restaurant = await axios.get(`http://localhost:3000/restaurants/search/${name}`)
-            commit('search', restaurant.data)
-        },
+        // async fetchAResByName({ commit }, name) {
+        //     const restaurant = await axios.get(`http://localhost:3000/restaurants/search/${name}`)
+        //     commit('SET_ARESBYNAME', restaurant.data)
+        //     console.log(restaurant) 
+        // },
+
         async fetchHotRes({ commit }) {
             const hotRes = await axios.get("http://localhost:3000/restaurants/hot/show")
             commit('SET_HOTRES', hotRes.data)
@@ -64,8 +69,11 @@ export default new Vuex.Store({
         async likeRes({ commit }, id) {
             const likedRes = await axios.put(`http://localhost:3000/restaurants/like/${id}`)
             commit('likeRes', likedRes.data)
+        },
+        async delRes({ commit }, id) {
+            const deletedRes = await axios.delete(`http://localhost:3000/restaurants/${id}`)
+            commit('delRes', deletedRes.data)
         }
-
 
     },
     modules: {}

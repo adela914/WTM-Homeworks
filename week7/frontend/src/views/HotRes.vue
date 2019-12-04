@@ -22,7 +22,7 @@
 </style>
 
 <script>
-import HotCard from '@/components/HotCard.vue'
+import HotCard from '@/components/Cards/HotCard.vue'
 import { mapState, mapActions } from 'vuex'
  
 export default {

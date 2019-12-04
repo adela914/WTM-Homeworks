@@ -19,7 +19,7 @@
 </style>
 
 <script>
-import ResCard from '@/components/ResCard.vue'
+import ResCard from '@/components/Cards/ResCard.vue'
 import Search from '@/components/Search.vue'
 import { mapState, mapActions } from 'vuex'
  
