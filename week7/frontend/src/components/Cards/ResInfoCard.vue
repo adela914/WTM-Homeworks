@@ -8,20 +8,26 @@
         v-card-text {{ restaurant.description }}
         v-card-subtitle {{ restaurant.likes }}
         v-btn(@click="likeRestaurant") Like 
-        v-btn Edit
         v-btn(@click="deleteRes") Delete
-         
+        deleteModal
+    
 </template>
 
 <script>
 const defaultImg = require('../../images/sashimi.png')
+
+import deleteModal from '@/components/deleteModal.vue'
 import { mapActions } from 'vuex'
 
   export default { 
    
     name: 'ResInfo',
+    components:
+    { deleteModal }
+    ,
     data: () => ({
-      defaultImg:defaultImg
+      defaultImg:defaultImg,
+
     }),
     props: {
       restaurant: {

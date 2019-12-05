@@ -1,9 +1,9 @@
 <template lang="pug">
-  p A restaurant's individual page.
+  main
     ResInfo(:restaurant="restaurant")
     Comments(:comments="restaurant.comments")
     FormComment(:restaurant="restaurant")
-    
+ 
 </template>
 
 
@@ -22,7 +22,8 @@ export default {
     FormComment
   },
   data(){
-    return{ 
+    return { 
+    dialog: false,
     }
   },
   computed: {
@@ -35,4 +36,17 @@ export default {
     this.fetchARes(this.$route.params.id)
   }
 }
+
+
+  //  div(v-if="dialog")
+  //     v-row(justify="center")
+  //       v-btn( color="primary" dark @click.stop="modal = true")
+  //       v-dialog(v-model="dialog" max-width="600px")
+  //         v-card
+  //           v-card-title.headline Use Google's location service?
+  //           v-card-actions
+  //             v-spacer
+  //             v-btn(color="green darken-1" text @click="dialog = false") Disagree
+  //             v-btn(color="green darken-1" text @click="dialog = false") Agree
 </script>
+
