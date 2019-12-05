@@ -1,7 +1,7 @@
 <template lang="pug">
   v-col(cols="12" md="4")
     v-card.mx-auto(max-width="280")
-      v-img(v-bind:src="hotRestaurant.image" height="200px")
+      v-img(:src="hotRestaurant.image ? hotRestaurant.image : defaultImg")
       v-card-title {{ hotRestaurant.name }}
       v-card-subtitle {{ hotRestaurant.location }}
       v-card-actions
@@ -18,11 +18,14 @@
 </template>
 
 <script>
+const defaultImg = require('../../images/sashimi.png')
+
 
   export default { 
 
     data: () => ({
-      show: false
+      show: false,
+      defaultImg:defaultImg
     }),
     name: 'HotCard',
     props: {

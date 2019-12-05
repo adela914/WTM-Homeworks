@@ -21,6 +21,21 @@
 </template>
 
 <script>
+import {mapActions } from 'vuex'
+ 
+export default {
+  name: 'App',
+  components: { 
+  },
+  computed: { 
+  },
+  methods: {
+    ...mapActions(['fetchRes'])
+  },
+  created() {
+    this.fetchRes()
+  }
+}
 </script>
 
 <style scoped>

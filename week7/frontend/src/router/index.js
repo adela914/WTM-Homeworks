@@ -6,9 +6,7 @@ import NewRes from '../views/NewRes.vue'
 import HotRes from '../views/HotRes.vue'
 import Restaurant from '../views/Restaurant.vue'
 import About from '../views/About.vue'
-import ResEdit from '../views/ResEdit.vue'
 
-// import Password from '../views/Password.vue'
 
 Vue.use(VueRouter)
 
@@ -41,11 +39,6 @@ const routes = [{
             path: '/hot',
             name: 'hotRes',
             component: HotRes
-        },
-        {
-            path: '/edit',
-            name: 'edit',
-            component: ResEdit
         }
 
     ]

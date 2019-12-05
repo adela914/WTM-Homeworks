@@ -1,9 +1,9 @@
 <template lang="pug">
   content
-    Search
+    v-text-field(solo label="Search" v-model="searchName")
     v-container.container
         v-row
-          ResCard(v-for="restaurant in restaurants", :restaurant="restaurant" :key="restaurant._id")
+          ResCard(v-for="restaurant in searchUserList", :restaurant="restaurant" :key="restaurant._id") 
 
 </template>
 
@@ -21,7 +21,7 @@
 <script>
 import ResCard from '@/components/Cards/ResCard.vue'
 import Search from '@/components/Search.vue'
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
  
 export default {
   name: 'Home',
@@ -29,14 +29,25 @@ export default {
     ResCard,
     Search
   },
+  data(){
+    return{
+      searchName : '',  
+    }
+  },
   computed: {
-    ...mapState(['restaurants'])
+    ...mapState(['restaurants']), 
+    searchUserList(){ 
+      var vm = this
+      return this.restaurants.filter(function (val) { 
+        console.log(vm.restaurants) 
+        if(val.name) return val.name.indexOf(vm.searchName) !== -1
+        else return true
+      })  
+    } 
   },
   methods: {
-    ...mapActions(['fetchRes'])
   },
   created() {
-    this.fetchRes()
   }
 }
 </script>

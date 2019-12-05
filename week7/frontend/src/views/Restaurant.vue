@@ -21,11 +21,15 @@ export default {
     Comments,
     FormComment
   },
+  data(){
+    return{ 
+    }
+  },
   computed: {
     ...mapState(['restaurant'])
   },
   methods: {
-    ...mapActions(['fetchARes'])
+    ...mapActions(['fetchARes']),
   },
   created() {
     this.fetchARes(this.$route.params.id)
