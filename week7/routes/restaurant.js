@@ -37,9 +37,8 @@ router.post("/new", async function(req, res) {
 router.put("/update/:id", async(req, res) => {
 
     const restaurant = await RestaurantService.find(req.params.id)
-
-    await RestaurantService.update(req.params.id, req.body)
-    res.status(200).send(restaurant)
+    const editedRes = await RestaurantService.update(req.params.id, req.body)
+    res.status(200).send(editedRes)
 })
 
 // delete a restaurant

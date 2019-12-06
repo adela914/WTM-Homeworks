@@ -1,5 +1,7 @@
 <template lang="pug">
   main
+    DeleteModal(:restaurant="restaurant")
+    EditModal(:restaurant="restaurant")
     ResInfo(:restaurant="restaurant")
     Comments(:comments="restaurant.comments")
     FormComment(:restaurant="restaurant")
@@ -11,6 +13,9 @@
 import ResInfo from '@/components/Cards/ResInfoCard.vue'
 import Comments from '@/components/Comments.vue'
 import FormComment from '@/components/Forms/CommentForm.vue'
+import DeleteModal from '@/components/modals/DeleteModal.vue'
+import EditModal from '@/components/modals/EditModal.vue'
+
 import { mapState, mapActions } from 'vuex'
 
 
@@ -19,7 +24,9 @@ export default {
   components: {
     ResInfo,
     Comments,
-    FormComment
+    FormComment,
+    DeleteModal,
+    EditModal,
   },
   data(){
     return { 
@@ -38,15 +45,6 @@ export default {
 }
 
 
-  //  div(v-if="dialog")
-  //     v-row(justify="center")
-  //       v-btn( color="primary" dark @click.stop="modal = true")
-  //       v-dialog(v-model="dialog" max-width="600px")
-  //         v-card
-  //           v-card-title.headline Use Google's location service?
-  //           v-card-actions
-  //             v-spacer
-  //             v-btn(color="green darken-1" text @click="dialog = false") Disagree
-  //             v-btn(color="green darken-1" text @click="dialog = false") Agree
+  
 </script>
 

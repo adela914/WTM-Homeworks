@@ -1,0 +1,40 @@
+<template lang="pug">
+  div
+    v-row(justify="center")
+      v-btn(color="primary" dark @click.stop="dialog = true") Delete
+      v-dialog(v-model="dialog" max-width="600px")
+        v-card
+          v-card-title.headline Use Google's location service?
+          v-card-actions
+            v-spacer
+            v-btn(color="green darken-1" text @click="dialog = false") Cancel
+            v-btn(color="green darken-1" text @click="deleteRes()") Delete
+</template>
+
+<script>
+import { mapActions } from 'vuex'
+
+export default {
+  data() {
+    return {
+      dialog: false
+    }
+  },
+  props: {
+      restaurant: {
+        type: Object
+      }
+    },
+   methods: {
+      ...mapActions(['delRes']),
+      deleteRes() {
+          this.dialog = false
+          this.delRes(this.restaurant._id)
+          this.$router.push('/')
+      
+      },
+    }
+}
+
+  
+</script>

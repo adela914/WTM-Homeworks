@@ -39,6 +39,12 @@ export default new Vuex.Store({
         DEL_RES(state, data) {
             const index = state.restaurants.findIndex(e => e._id === data._id)
             state.restaurants.splice(index, 1)
+        },
+        EDIT_RES(state, data) {
+            const index = state.restaurants.findIndex(e => e._id === data._id)
+            if (index !== -1) {
+                state.restaurants.splice(index, 1, data)
+            }
         }
     },
     actions: {
@@ -69,6 +75,10 @@ export default new Vuex.Store({
         async delRes({ commit }, id) {
             const deletedRes = await axios.delete(`http://localhost:3000/restaurants/${id}`)
             commit('DEL_RES', deletedRes.data)
+        },
+        async editRes({ commit }, [id, editedInfo]) {
+            const editedRes = await axios.put(`http://localhost:3000/restaurants/update/${id}`, editedInfo)
+            commit('EDIT_RES', editedRes.data)
         }
 
     },

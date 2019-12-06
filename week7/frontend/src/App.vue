@@ -1,21 +1,22 @@
 <template lang="pug">
-  v-container.app
-    header
-      section#title
-          div.navbar
-              a
-                router-link.logo(to="/") MOGO!
-              .navitems
-                  router-link(to="/new") Share
-                  router-link(to="/hot") Hot🔥
-                  router-link(to="/contact") Contact
-                  router-link(to="/about") About
-    main
-      router-view              
+  v-app
+    v-container.app
+      header
+        section#title
+            div.navbar
+                a
+                  router-link.logo(to="/") MOGO!
+                .navitems
+                    router-link(to="/new") Share
+                    router-link(to="/hot") Hot🔥
+                    router-link(to="/contact") Contact
+                    router-link(to="/about") About
+      main
+        router-view              
 
 
-    footer
-      p Made with ❤️ in Berlin
+      footer
+        p Made with ❤️ in Berlin
 
 
 </template>
