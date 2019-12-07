@@ -9,20 +9,20 @@
                 .navitems
                     router-link(to="/new") Share
                     router-link(to="/hot") Hot🔥
-                    router-link(to="/contact") Contact
+                    router-link(to="/subscribe") Subscribe us
                     router-link(to="/about") About
       main
         router-view              
+    v-footer.footer(absolute class="font-weight-medium amber accent-2") Made with ❤️ in Berlin   
+        
 
 
-      footer
-        p Made with ❤️ in Berlin
-
+      
 
 </template>
 
 <script>
-import {mapActions } from 'vuex'
+import { mapActions } from 'vuex'
  
 export default {
   name: 'App',
@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style scoped>
+
 /* Navigation bar style */
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Questrial&display=swap');
 .app {
@@ -77,23 +78,18 @@ a:hover {
     justify-content: space-between;
 }
 #title {
-    background-color: white;
     padding-left: 10%;
     padding-right: 10%;
 }
 main {
     padding-left: 10%;
     padding-right: 10%;
+    margin-top:40px;
+    margin-bottom:50px;
 }
-/* footer */
-footer {
-  position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 50px;
-   background-color: rgb(253, 210, 74);
-   color: white;
-   text-align: center;
+
+.footer {
+  text-align: center;
 }
+
 </style>

@@ -1,6 +1,7 @@
 <template lang="pug">
   content
-    v-text-field(solo label="Search" v-model="searchName")
+    v-container(style="max-width:500px")
+      v-text-field(solo label="Search" v-model="searchName")
     v-container.container
         v-row
           ResCard(v-for="restaurant in searchUserList", :restaurant="restaurant" :key="restaurant._id") 
@@ -20,14 +21,12 @@
 
 <script>
 import ResCard from '@/components/Cards/ResCard.vue'
-import Search from '@/components/Search.vue'
 import { mapState } from 'vuex'
  
 export default {
   name: 'Home',
   components: {
-    ResCard,
-    Search
+    ResCard
   },
   data(){
     return{

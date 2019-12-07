@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Contact from '../views/Contact.vue'
+import Subscribe from '../views/Subscribe.vue'
 import NewRes from '../views/NewRes.vue'
 import HotRes from '../views/HotRes.vue'
 import Restaurant from '../views/Restaurant.vue'
@@ -26,9 +26,9 @@ const routes = [{
         component: About
     },
     {
-        path: '/contact',
-        name: 'contact',
-        component: Contact
+        path: '/subscribe',
+        name: 'subscribe',
+        component: Subscribe
     },
     {
         path: '/new',

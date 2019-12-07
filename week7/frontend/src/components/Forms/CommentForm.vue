@@ -1,10 +1,10 @@
 <template lang="pug">
   main
     v-col
-      v-col(cols="5")
+      v-col
         v-text-field(v-model="author" label="Name"
                 placeholder="What's your name?")
-      v-col(cols="5")        
+      v-col   
         v-textarea(v-model="text" solo
               name="input-7-4"
               label="What do you think?" )

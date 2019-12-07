@@ -1,12 +1,13 @@
 <template lang="pug">
-  v-col(cols="12" md="4")     
-    v-card.mx-auto(max-width="280") 
+  v-flex(md4 sm6)     
+    v-card.mx-auto.card(max-width="280") 
       v-img(:src="restaurant.image ? restaurant.image : defaultImg")
       v-card-title {{ restaurant.name }}
       v-card-subtitle {{ restaurant.location }}
       v-card-actions
         v-btn(text @click="moveRestaurant") Explore
-        v-btn(@click="likeRestaurant" color="purple" text) Like
+        v-btn(@click="likeRestaurant" color="purple" text)
+          v-icon(color="#cf455c") mdi-heart
         v-card-subtitle.likes {{ restaurant.likes }}
         v-spacer
         v-btn(icon @click="show = !show")
@@ -48,5 +49,9 @@ import { mapActions } from 'vuex'
 
 </script>
 
+<style scoped>
 
-
+.card {
+  margin-bottom: 10px;
+}
+</style>

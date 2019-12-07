@@ -1,6 +1,7 @@
 <template lang="pug">
   v-container
-    p(v-for="comment in comments") {{ comment.author }} {{ comment.text }}
+    p Comments
+    p(v-for="comment in comments") {{ comment.author }} : {{ comment.text }}  {{ comment.createdAt }}
 </template>
 
 

@@ -3,7 +3,6 @@
 ```
 $ cd week7
 $ npm i
-$ npm i cors
 $ nodemon index.js
 
 ```
@@ -22,7 +21,6 @@ http://localhost:3000
 $ cd frontend
 $ npm install -D pug pug-plain-loader
 $ vue add vuetify
-$ npm i axios
 $ npm run serve
 
 ```

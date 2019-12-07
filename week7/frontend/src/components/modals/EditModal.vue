@@ -2,7 +2,7 @@
   v-row(justify="center")
     v-dialog(v-model="dialog" persistent max-width="600px")
       template(v-slot:activator="{ on }")
-        v-btn(color="primary" dark v-on="on")
+        v-btn(color="primary" dark v-on="on") Edit
       v-card
         v-card-title
           span.headline Edit {{ restaurant.name }}'s Information!
@@ -62,9 +62,9 @@ export default {
         image: this.restaurant.image,
         description: this.restaurant.description
         }
+        this.editRes([this.restaurant._id, editedRes])
+        this.dialog = false
 
-          this.editRes([this.restaurant._id, editedRes])
-          // this.$router.push({ name:'restaurant', params: {id: this.restaurant._id} })
       
       },
     }

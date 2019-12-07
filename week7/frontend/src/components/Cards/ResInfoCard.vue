@@ -1,14 +1,22 @@
 <template lang="pug">
-  div
-    v-card  
-     v-responsive  
-        v-img(:src="restaurant.image ? restaurant.image : defaultImg" height="200px")
-        v-card-title {{ restaurant.name }}
-        v-card-subtitle {{ restaurant.location }}
-        v-card-text {{ restaurant.description }}
-        v-card-subtitle {{ restaurant.likes }}
-        v-btn(@click="likeRestaurant") Like 
-        
+  v-card.mx-auto(height="auto" width="100%")
+    v-list-item
+      v-list-item-content
+        v-list-item-title.headline Our Changing Planet
+        v-list-item-subtitle by Kurt Wagner
+        v-list-item-subtitle
+          v-btn(icon)
+            v-icon mdi-heart
+    v-img(src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg" height="194")
+    v-card-text Visit ten places on our planet that are undergoing the biggest changes today.
+  
+    
+
+    
+    
+
+
+
 </template>
 
 <script>

@@ -28,7 +28,8 @@ import { mapActions } from 'vuex'
         location: null,
         image: null,
         description: null,
-        password: null
+        password: null,
+       
       }
     },
     methods: {
