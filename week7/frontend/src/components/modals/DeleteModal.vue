@@ -4,11 +4,12 @@
       v-btn(color="rgb(253, 210, 74)" dark @click.stop="dialog = true") Delete
       v-dialog(v-model="dialog" max-width="600px")
         v-card
+          v-alert(v-model="alert" v-if="alert" type="warning") Hmmm...Sorry, that password isn't right.
           v-card-title.headline Please type password that you created. 
-          v-text-field(v-model="password" type="password"  max-width="200px")
+          v-text-field(v-model="password" type="password"  max-width="50px")
           v-card-actions
             v-spacer
-            v-btn(color="green darken-1" text @click="dialog = false") Cancel
+            v-btn(color="green darken-1" text @click="cancelModal") Cancel
             v-btn(color="green darken-1" text @click="deleteRes") Delete
 </template>
 
@@ -19,7 +20,8 @@ export default {
   data() {
     return {
       dialog: false,
-      password: null
+      password: null,
+      alert:false
     }
   },
   props: {
@@ -35,9 +37,15 @@ export default {
           this.dialog = false
           this.$router.push('/')
         } else {
+          this.alert = true
           console.log("Password doesn't match.")
         }
       },
+      cancelModal() {
+        this.dialog = false
+        this.alert = false
+        this.password = null
+      }
     }
 }
 

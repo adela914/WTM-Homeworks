@@ -1,7 +1,7 @@
 <template lang="pug">
   v-col(cols="12" md="4")
     v-card.mx-auto(max-width="280")
-      v-img(:src="hotRestaurant.image ? hotRestaurant.image : defaultImg")
+      v-img(:src="hotRestaurant.image ? hotRestaurant.image : defaultImg" aspect-ratio max-height="200px")
       v-card-title {{ hotRestaurant.name }}
       v-card-subtitle {{ hotRestaurant.location }}
       v-card-actions

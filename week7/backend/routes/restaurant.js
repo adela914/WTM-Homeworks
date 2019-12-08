@@ -36,16 +36,18 @@ router.post("/new", async function(req, res) {
 
 router.put("/update/:id", async(req, res) => {
 
+    const editRes = await RestaurantService.update(req.params.id, req.body)
     const restaurant = await RestaurantService.find(req.params.id)
-    const editedRes = await RestaurantService.update(req.params.id, req.body)
-    res.status(200).send(editedRes)
+
+    console.log(restaurant)
+    res.status(200).send(restaurant)
 })
 
 // delete a restaurant
 
 router.delete("/:id", async(req, res) => {
     const restaurant = await RestaurantService.del(req.params.id)
-    res.send(restaurant)
+    res.status(200).send(restaurant)
 })
 
 // Get 3 most liked restaurants / test needed
@@ -69,9 +71,7 @@ router.get("/search/:name", async(req, res) => {
 router.put('/like/:id', async(req, res) => {
     const restaurant = await RestaurantService.find(req.params.id)
     await RestaurantService.likeRes(restaurant)
-    console.log(restaurant)
-
-    res.send(restaurant)
+    res.status(200).send(restaurant)
 })
 
 module.exports = router

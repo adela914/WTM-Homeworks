@@ -46,6 +46,7 @@ export default new Vuex.Store({
             if (index !== -1) {
                 state.restaurants.splice(index, 1, data)
             }
+            console.log(data)
         },
         SUBSCRIBE(state, data) {
             state.subscribers.unshift(data)
@@ -83,6 +84,7 @@ export default new Vuex.Store({
         async editRes({ commit }, [id, editedInfo]) {
             const editedRes = await axios.put(`http://localhost:3000/restaurants/update/${id}`, editedInfo)
             commit('EDIT_RES', editedRes.data)
+            console.log(editedRes)
         },
         async subscribe({ commit }, data) {
             const userdata = await axios.post("http://localhost:3000/subscribe", data)

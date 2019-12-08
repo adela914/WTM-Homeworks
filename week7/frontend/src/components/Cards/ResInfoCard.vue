@@ -7,7 +7,7 @@
         v-list-item-subtitle {{ restaurant.location }}
           v-btn(@click="likeRestaurant" color="purple" text)
             v-icon mdi-heart
-            v-list-item-subtitle {{ restaurant.likes }} 
+            v-list-item-subtitle(class="red--text text--lighten-1 font-weight-bold") {{ restaurant.likes }} Likes
 
     v-img(:src="restaurant.image ? restaurant.image : defaultImg" height="194")
     v-card-text Visit ten places on our planet that are undergoing the biggest changes today.
