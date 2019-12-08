@@ -13,8 +13,9 @@
                     router-link(to="/about") About
       main
         router-view              
-    v-footer.footer(absolute class="font-weight-medium amber accent-2") Made with ❤️ in Berlin          
-
+      v-footer.footer(absolute class="font-weight-medium amber accent-2") 
+        v-col(class="text-center"
+        cols="12") Made with ❤️ in Berlin          
 
       
 
