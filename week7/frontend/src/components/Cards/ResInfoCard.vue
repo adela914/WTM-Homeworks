@@ -2,14 +2,13 @@
   v-card.mx-auto(height="auto" width="100%")
     v-list-item
       v-list-item-content
-        v-list-item-title.headline {{ restaurant.name }}
-        v-list-item-subtitle by {{ restaurant.author }}
+        v-list-item-title.headline Our Changing Planet
+        v-list-item-subtitle by Kurt Wagner
         v-list-item-subtitle
-          v-btn(@click="likeRestaurant" color="purple" icon)
+          v-btn(icon)
             v-icon mdi-heart
-            v-list-item-subtitle  {{ restaurant.likes }} 
-    v-img(:src="restaurant.image ? restaurant.image : defaultImg" height="194")
-    v-card-text {{ restaurant.discription }}
+    v-img(src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg" height="194")
+    v-card-text Visit ten places on our planet that are undergoing the biggest changes today.
   
     
 

@@ -46,8 +46,6 @@ export default new Vuex.Store({
             if (index !== -1) {
                 state.restaurants.splice(index, 1, data)
             }
-            // Vue.set(state.restaurants, index, data)
-
         },
         SUBSCRIBE(state, data) {
             state.subscribers.unshift(data)

@@ -36,7 +36,6 @@ export default {
           this.$router.push('/')
         } else {
           console.log("Password doesn't match.")
-          //모달창 띄우기
         }
       },
     }
