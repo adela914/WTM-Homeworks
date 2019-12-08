@@ -5,7 +5,7 @@
       v-dialog(v-model="dialog" max-width="600px")
         v-card
           v-card-title.headline Please type password that you created. 
-          v-text-field(v-model="this.password" type="password"  max-width="200px")
+          v-text-field(v-model="password" type="password"  max-width="200px")
           v-card-actions
             v-spacer
             v-btn(color="green darken-1" text @click="dialog = false") Cancel
@@ -36,6 +36,7 @@ export default {
           this.$router.push('/')
         } else {
           console.log("Password doesn't match.")
+          //모달창 띄우기
         }
       },
     }

@@ -69,8 +69,6 @@ router.get("/search/:name", async(req, res) => {
 router.put('/like/:id', async(req, res) => {
     const restaurant = await RestaurantService.find(req.params.id)
     await RestaurantService.likeRes(restaurant)
-    console.log(restaurant)
-
     res.send(restaurant)
 })
 

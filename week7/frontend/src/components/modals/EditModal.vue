@@ -13,11 +13,11 @@
                 v-col(cols="12" sm="6" md="4" )
                   v-text-field(label="Legal first name*" v-model="restaurant.author")
                 v-col(cols="12" sm="6" md="4")
-                  v-text-field(label="Legal first name*" v-model="restaurant.location")
-                v-col(cols="12" sm="6" md="4")
+                  v-text-field(label="Legal first name*" v-model="restaurant.name")
+                v-col(cols="12" sm="6" md="4" )
                   v-text-field(label="Legal last name*"
                     hint="example of persistent helper text"
-                    persistent-hint
+                    persistent-hint v-model="restaurant.location"
                     required)
                 v-col(cols="12" sm="6" md="4")
                   v-text-field(label="Legal first name*" )
