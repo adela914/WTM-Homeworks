@@ -4,10 +4,12 @@
         v-row
           v-col
             v-alert(v-model="alert" v-if="alert" type="success") Thank you for subscribe us! ❤️
-            v-text-field(v-model="fName" label="First Name" outlined color="yellow")
+            p1.font-weight-medium.headline.font-italic.text-center Join our newsletter
+            v-text-field.mt-3(v-model="fName" label="First Name" outlined color="yellow")
             v-text-field(v-model="lName" label="Last Name" outlined color="yellow")
             v-text-field(v-model="email" label="Email" outlined color="yellow")
-            v-btn(@click="Signup" color="rgb(253, 210, 74)") Submit
+            v-btn(@click="Signup" color="rgb(253, 210, 74)") SUBSCRIBE
+            div.mt-4 * By clicking "subscribe", I agree that my information can be used for marketing segmentation.
           
         
 

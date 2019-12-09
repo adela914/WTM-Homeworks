@@ -1,8 +1,18 @@
 const express = require("express")
 const router = express.Router()
-const request = require('request')
+const request = require("request")
 
-router.post('/subscribe', (req, res) => {
+const mailchimpInstance = process.env.MAILCHIMP_INSTANCE
+    // process.env.MAILCHIMP_INSTANCE
+    // "us4"
+const mailchimpListID = process.env.MAILCHIMP_LISTID
+    // process.env.MAILCHIMP_LISTID
+    // "e750d9dc4d"
+const mailchimpAPIKey = process.env.MAILCHIMP_APIKEY
+    // process.env.MAILCHIMP_APIKEY
+
+
+router.post("/subscribe", (req, res) => {
     var firstName = req.body.fName;
     var lastName = req.body.lName;
     var email = req.body.email;
@@ -11,7 +21,7 @@ router.post('/subscribe', (req, res) => {
     const data = {
         members: [{
             email_address: email,
-            status: 'subscribed',
+            status: "subscribed",
             merge_fields: {
                 FNAME: firstName,
                 LNAME: lastName
@@ -19,13 +29,14 @@ router.post('/subscribe', (req, res) => {
         }]
     };
 
-    const postData = JSON.stringify(data);
+    const postData = JSON.stringify(data)
+
 
     const options = {
-        url: 'https://us4.api.mailchimp.com/3.0/lists/e750d9dc4d',
-        method: 'POST',
+        url: `https://${mailchimpInstance}.api.mailchimp.com/3.0/lists/${mailchimpListID}`,
+        method: "POST",
         headers: {
-            Authorization: 'auth 7338382d5b265c1c05e7a2781d07b593-us4'
+            Authorization: `auth ${mailchimpAPIKey}`
         },
         body: postData
     };

@@ -1,3 +1,5 @@
+/// User-Model will be needed to be updated once login feature is added.
+
 var mongoose = require("mongoose");
 
 var userSchema = new mongoose.Schema({

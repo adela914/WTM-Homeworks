@@ -4,7 +4,7 @@
       v-flex(md6 sm12)
         v-img(:src="defaultImg" max-width="400px")
       v-flex(md6 sm12)
-        p.font-weight-medium.about Berlin there are a plenty of Korean restaurants! But how do you know if it's an authentic Korean restaurant or not? No worries 🙅 Here you can find a lot of Korean restaurants with its informations and other foodie's reviews! Please do check our list out and have a good Korean Mogo! 🍱
+        p.font-weight-medium.about In Berlin there are a plenty of Korean restaurants! But how do you know if it's an authentic Korean restaurant? No worries 🙅 Here you can find a lot of Korean restaurants with its informations and other foodie's reviews! Please do check our list out and have a good Korean Mogo! 🍱
 
 </template>
 

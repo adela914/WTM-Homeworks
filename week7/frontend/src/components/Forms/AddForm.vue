@@ -2,6 +2,7 @@
   v-container(style="max-width:450px;")
     v-layout(row wrap)
       v-flex(xs12)
+        p1.font-weight-medium.headline.font-italic.text-center Share your favourite restaurant!
         v-text-field(v-model="author" label="You Name" single-line color="rgb(253, 210, 74)")
         v-text-field(v-model="name" label="Name of Restaurant" single-line color="rgb(253, 210, 74)")
         v-text-field(v-model="location" label="Location" single-line color="rgb(253, 210, 74)")

@@ -3,12 +3,12 @@
     v-col
       v-col
         v-text-field(v-model="author" label="Name"
-                placeholder="What's your name?")
+                placeholder="What's your name?" color="rgb(253, 210, 74)")
       v-col   
         v-textarea(v-model="text" solo
-              name="input-7-4"
+              name="input-7-4" color="rgb(253, 210, 74)"
               label="What do you think?" )
-        v-btn(@click="submitComment") Comment
+        v-btn(@click="submitComment" color="rgb(253, 210, 74)") Comment
     
 
 

@@ -1,3 +1,6 @@
+/// User-service will be needed to be updated once login feature is added.
+
+
 const BaseService = require('./base-service')
 const UserModel = require('../models/user')
 

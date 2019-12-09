@@ -1,5 +1,6 @@
 <template lang="pug">
   content
+    p1.headline.font-italic.font-weight-medium.pl-3 Top 3 Restaurants
     v-container.container
         v-row
           HotCard(v-for="hotRestaurant in hotRestaurants", :hotRestaurant="hotRestaurant", :key="hotRestaurant._id")

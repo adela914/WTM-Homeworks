@@ -9,7 +9,7 @@
                 .navitems
                     router-link(to="/new") Share
                     router-link(to="/hot") Hot🔥
-                    router-link(to="/subscribe") Subscribe us
+                    router-link(to="/subscribe") Subscribe
                     router-link(to="/about") About
       main
         router-view              
@@ -91,5 +91,10 @@ main {
 .footer {
   text-align: center;
 }
-
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .navitems {
+    font-size: 15px;
+  }
+}
 </style>

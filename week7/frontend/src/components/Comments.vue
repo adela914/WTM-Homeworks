@@ -1,7 +1,12 @@
 <template lang="pug">
   v-container
-    p Comments
-    p(v-for="comment in comments") {{ comment.author }} : {{ comment.text }}  {{ comment.createdAt }}
+    p.headline.font-italic.font-weight-medium Comments
+    div
+      v-alert.pa-0.pl-2(v-for="comment in comments" :key="comment._id" outlined
+      color="#cf455c")
+        .title {{ comment.author }} 
+        div {{ comment.text }} 
+        div.overline At {{ comment.createdAt}}
 </template>
 
 
