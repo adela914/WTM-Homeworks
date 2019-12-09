@@ -10,7 +10,7 @@
           v-list-item-subtitle(class="red--text text--lighten-1 font-weight-bold") {{ restaurant.likes }} Likes
         v-list-item-subtitle.text-right Last updated time : {{ restaurant.updatedAt }}
     v-img(:src="restaurant.image ? restaurant.image : defaultImg"  height="250")
-    v-card-text Visit ten places on our planet that are undergoing the biggest changes today.
+    v-card-text {{ restaurant.description }}
   
     
 
